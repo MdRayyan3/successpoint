@@ -260,7 +260,7 @@ Please guide me through the admission process.`;
                 </div>
 
                 <div>
-                  <Label htmlFor="admissionClass">In which class admission *</Label>
+                  <Label htmlFor="admissionClass">In which class *</Label>
                   <Select onValueChange={(value) => handleInputChange('admissionClass', value)} value={formData.admissionClass}>
                     <SelectTrigger className={errors.admissionClass ? 'border-red-500' : ''}>
                       <SelectValue placeholder="Select a class" />
