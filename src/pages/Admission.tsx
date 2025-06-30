@@ -60,7 +60,7 @@ const Admission = () => {
       'bcom-2nd-hons': 'B.Com 2nd Semester (Hons)',
       'bcom-2nd-gen': 'B.Com 2nd Semester (Gen)',
       'bcom-3rd-hons': 'B.Com 3rd Semester (Hons)',
-      'bcom-3rd-gen': 'B.Com 3rd Semester (Hons)',
+      'bcom-3rd-gen': 'B.Com 3rd Semester (Gen)',
       'bcom-4th-hons': 'B.Com 4th Semester (Hons)',
       'bcom-4th-gen': 'B.Com 4th Semester (Gen)',
       'bcom-5th-hons': 'B.Com 5th Semester (Hons)',
@@ -90,7 +90,7 @@ Student Details:
 
 Please guide me through the admission process.`;
 
-      // Primary WhatsApp number
+      // Primary WhatsApp number (hidden from UI)
       const whatsappUrl = `https://wa.me/919088770040?text=${encodeURIComponent(message)}`;
       
       // Show success toast
@@ -226,16 +226,12 @@ Please guide me through the admission process.`;
             </div>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info - Only show secondary number */}
           <div className="bg-blue-600 text-white p-6 rounded-xl mb-12 text-center shadow-lg">
             <h3 className="text-xl font-bold mb-4">📞 Contact for Admission</h3>
             <div className="flex flex-wrap justify-center gap-4 text-lg">
-              <a href="https://wa.me/919088770040" className="hover:text-blue-200 transition-colors font-semibold">
-                📱 Primary: +91 90887 70040
-              </a>
-              <span className="text-blue-200">•</span>
-              <a href="https://wa.me/919163924237" className="hover:text-blue-200 transition-colors">
-                📱 Secondary: +91 91639 24237
+              <a href="https://wa.me/919163924237" className="hover:text-blue-200 transition-colors font-semibold">
+                📱 WhatsApp: +91 91639 24237
               </a>
             </div>
           </div>

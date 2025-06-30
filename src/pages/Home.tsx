@@ -34,14 +34,14 @@ const Home = () => {
                 <div className="w-48 h-48 rounded-full overflow-hidden shadow-lg">
                   <img 
                     src="/lovable-uploads/e23f35c3-881c-4a15-ad66-590640806b5a.png" 
-                    alt="Khurshid Alam Sir" 
+                    alt="Md. Khurshid Alam Sir" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="text-left">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-4">Khurshid Alam Sir</h3>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-4">Md. Khurshid Alam Sir</h3>
                   <p className="text-gray-600 mb-6 leading-relaxed">
-                    Our experienced and dedicated head teacher, committed to providing the best education and guidance to all our students. With years of experience in comprehensive coaching, Khurshid Alam Sir ensures that every student receives personalized attention and quality education.
+                    Our experienced and dedicated head teacher, committed to providing the best education and guidance to all our students. With years of experience in comprehensive coaching, Md. Khurshid Alam Sir ensures that every student receives personalized attention and quality education.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <a href="tel:9163924237" className="flex items-center justify-center bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">

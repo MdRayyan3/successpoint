@@ -20,12 +20,12 @@ const Contact = () => {
                   <div className="w-32 h-32 rounded-full overflow-hidden shadow-lg">
                     <img 
                       src="/lovable-uploads/e23f35c3-881c-4a15-ad66-590640806b5a.png" 
-                      alt="Khurshid Alam Sir" 
+                      alt="Md. Khurshid Alam Sir" 
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="flex-1 text-center md:text-left">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-4">Khurshid Alam Sir</h3>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-4">Md. Khurshid Alam Sir</h3>
                     <p className="text-gray-600 mb-6">
                       Head Teacher & Director at Success Point Coaching Centre. 
                       Feel free to contact for any queries regarding admission, courses, or academic guidance.
