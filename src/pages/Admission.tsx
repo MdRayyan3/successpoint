@@ -6,8 +6,24 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
+interface FormData {
+  fullName: string;
+  admissionClass: string;  
+  mobile: string;
+  password: string;
+  email: string;
+}
+
+interface FormErrors {
+  fullName?: string;
+  admissionClass?: string;
+  mobile?: string;
+  password?: string;
+  email?: string;
+}
+
 const Admission = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     fullName: '',
     admissionClass: '',
     mobile: '',
@@ -15,10 +31,10 @@ const Admission = () => {
     email: ''
   });
 
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<FormErrors>({});
 
   const validateForm = () => {
-    const newErrors = {};
+    const newErrors: FormErrors = {};
     if (!formData.fullName.trim()) newErrors.fullName = 'Full name is required';
     if (!formData.admissionClass) newErrors.admissionClass = 'Please select a class';
     if (!formData.mobile.trim()) newErrors.mobile = 'Mobile number is required';
@@ -29,7 +45,7 @@ const Admission = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
       const message = `Hi! I want to apply for admission at Success Point Coaching Centre.
@@ -47,7 +63,7 @@ Please guide me through the admission process.`;
     }
   };
 
-  const handleInputChange = (field, value) => {
+  const handleInputChange = (field: keyof FormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     if (errors[field]) {
       setErrors(prev => ({ ...prev, [field]: '' }));

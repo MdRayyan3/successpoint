@@ -7,8 +7,24 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 
+interface FormData {
+  fullName: string;
+  admissionClass: string;
+  mobile: string;
+  password: string;
+  email: string;
+}
+
+interface FormErrors {
+  fullName?: string;
+  admissionClass?: string;
+  mobile?: string;
+  password?: string;
+  email?: string;
+}
+
 const Registration = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     fullName: '',
     admissionClass: '',
     mobile: '',
@@ -16,7 +32,7 @@ const Registration = () => {
     email: ''
   });
 
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<FormErrors>({});
   const [confirmationCode, setConfirmationCode] = useState('');
   const [isRegistered, setIsRegistered] = useState(false);
 
@@ -27,7 +43,7 @@ const Registration = () => {
   };
 
   const validateForm = () => {
-    const newErrors = {};
+    const newErrors: FormErrors = {};
     if (!formData.fullName.trim()) newErrors.fullName = 'Full name is required';
     if (!formData.admissionClass) newErrors.admissionClass = 'Please select a class';
     if (!formData.mobile.trim()) newErrors.mobile = 'Mobile number is required';
@@ -38,7 +54,7 @@ const Registration = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
       const code = generateConfirmationCode();
@@ -61,7 +77,7 @@ Please confirm my registration.`;
     }
   };
 
-  const handleInputChange = (field, value) => {
+  const handleInputChange = (field: keyof FormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     if (errors[field]) {
       setErrors(prev => ({ ...prev, [field]: '' }));
