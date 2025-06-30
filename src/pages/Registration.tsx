@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { useToast } from '@/hooks/use-toast';
 
 interface FormData {
   fullName: string;
@@ -35,11 +36,36 @@ const Registration = () => {
   const [errors, setErrors] = useState<FormErrors>({});
   const [confirmationCode, setConfirmationCode] = useState('');
   const [isRegistered, setIsRegistered] = useState(false);
+  const { toast } = useToast();
 
   const generateConfirmationCode = () => {
     const timestamp = Date.now();
     const randomNum = Math.floor(Math.random() * 1000);
     return `SP${timestamp.toString().slice(-6)}${randomNum.toString().padStart(3, '0')}`;
+  };
+
+  const getClassDisplayName = (value: string) => {
+    const classMap: { [key: string]: string } = {
+      'class-11-isc': 'Class 11th (ISC Board)',
+      'class-11-cbse': 'Class 11th (CBSE Board)',
+      'class-12-wb-1st': 'Class 12th - 1st Semester (W.B. Board)',
+      'class-12-wb-2nd': 'Class 12th - 2nd Semester (W.B. Board)',
+      'class-12-wb-3rd': 'Class 12th - 3rd Semester (W.B. Board)',
+      'class-12-wb-4th': 'Class 12th - 4th Semester (W.B. Board)',
+      'bcom-1st-hons': 'B.Com 1st Semester (Hons)',
+      'bcom-1st-gen': 'B.Com 1st Semester (Gen)',
+      'bcom-2nd-hons': 'B.Com 2nd Semester (Hons)',
+      'bcom-2nd-gen': 'B.Com 2nd Semester (Gen)',
+      'bcom-3rd-hons': 'B.Com 3rd Semester (Hons)',
+      'bcom-3rd-gen': 'B.Com 3rd Semester (Gen)',
+      'bcom-4th-hons': 'B.Com 4th Semester (Hons)',
+      'bcom-4th-gen': 'B.Com 4th Semester (Gen)',
+      'bcom-5th-hons': 'B.Com 5th Semester (Hons)',
+      'bcom-5th-gen': 'B.Com 5th Semester (Gen)',
+      'bcom-6th-hons': 'B.Com 6th Semester (Hons)',
+      'bcom-6th-gen': 'B.Com 6th Semester (Gen)'
+    };
+    return classMap[value] || value;
   };
 
   const validateForm = () => {
@@ -65,7 +91,7 @@ const Registration = () => {
 
 Registration Details:
 - Full Name: ${formData.fullName}
-- Class: ${formData.admissionClass}
+- Class: ${getClassDisplayName(formData.admissionClass)}
 - Mobile: ${formData.mobile}
 - Email: ${formData.email}
 - Confirmation Code: ${code}
@@ -73,7 +99,23 @@ Registration Details:
 Please confirm my registration.`;
 
       const whatsappUrl = `https://wa.me/919163924237?text=${encodeURIComponent(message)}`;
-      window.open(whatsappUrl, '_blank');
+      
+      // Show success toast
+      toast({
+        title: "Registration Successful!",
+        description: `Your confirmation code is: ${code}`,
+      });
+
+      // Open WhatsApp after a short delay to show the success message
+      setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+      }, 1000);
+    } else {
+      toast({
+        title: "Form Incomplete",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
     }
   };
 

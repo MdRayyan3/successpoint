@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { useToast } from '@/hooks/use-toast';
 
 interface FormData {
   fullName: string;
@@ -32,6 +33,7 @@ const Admission = () => {
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
+  const { toast } = useToast();
 
   const validateForm = () => {
     const newErrors: FormErrors = {};
@@ -45,6 +47,30 @@ const Admission = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  const getClassDisplayName = (value: string) => {
+    const classMap: { [key: string]: string } = {
+      'class-11-isc': 'Class 11th (ISC Board)',
+      'class-11-cbse': 'Class 11th (CBSE Board)',
+      'class-12-wb-1st': 'Class 12th - 1st Semester (W.B. Board)',
+      'class-12-wb-2nd': 'Class 12th - 2nd Semester (W.B. Board)',
+      'class-12-wb-3rd': 'Class 12th - 3rd Semester (W.B. Board)',
+      'class-12-wb-4th': 'Class 12th - 4th Semester (W.B. Board)',
+      'bcom-1st-hons': 'B.Com 1st Semester (Hons)',
+      'bcom-1st-gen': 'B.Com 1st Semester (Gen)',
+      'bcom-2nd-hons': 'B.Com 2nd Semester (Hons)',
+      'bcom-2nd-gen': 'B.Com 2nd Semester (Gen)',
+      'bcom-3rd-hons': 'B.Com 3rd Semester (Hons)',
+      'bcom-3rd-gen': 'B.Com 3rd Semester (Gen)',
+      'bcom-4th-hons': 'B.Com 4th Semester (Hons)',
+      'bcom-4th-gen': 'B.Com 4th Semester (Gen)',
+      'bcom-5th-hons': 'B.Com 5th Semester (Hons)',
+      'bcom-5th-gen': 'B.Com 5th Semester (Gen)',
+      'bcom-6th-hons': 'B.Com 6th Semester (Hons)',
+      'bcom-6th-gen': 'B.Com 6th Semester (Gen)'
+    };
+    return classMap[value] || value;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
@@ -52,14 +78,28 @@ const Admission = () => {
 
 Student Details:
 - Full Name: ${formData.fullName}
-- Class: ${formData.admissionClass}
+- Class: ${getClassDisplayName(formData.admissionClass)}
 - Mobile: ${formData.mobile}
 - Email: ${formData.email}
 
 Please guide me through the admission process.`;
 
       const whatsappUrl = `https://wa.me/919163924237?text=${encodeURIComponent(message)}`;
+      
+      // Show success toast
+      toast({
+        title: "Redirecting to WhatsApp",
+        description: "Your admission request is being sent via WhatsApp.",
+      });
+
+      // Open WhatsApp
       window.open(whatsappUrl, '_blank');
+    } else {
+      toast({
+        title: "Form Incomplete",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
     }
   };
 
@@ -148,6 +188,7 @@ Please guide me through the admission process.`;
                     value={formData.fullName}
                     onChange={(e) => handleInputChange('fullName', e.target.value)}
                     className={errors.fullName ? 'border-red-500' : ''}
+                    placeholder="Enter your full name"
                   />
                   {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>}
                 </div>
@@ -190,6 +231,7 @@ Please guide me through the admission process.`;
                     value={formData.mobile}
                     onChange={(e) => handleInputChange('mobile', e.target.value)}
                     className={errors.mobile ? 'border-red-500' : ''}
+                    placeholder="Enter your mobile number"
                   />
                   {errors.mobile && <p className="text-red-500 text-sm mt-1">{errors.mobile}</p>}
                 </div>
@@ -202,6 +244,7 @@ Please guide me through the admission process.`;
                     value={formData.password}
                     onChange={(e) => handleInputChange('password', e.target.value)}
                     className={errors.password ? 'border-red-500' : ''}
+                    placeholder="Create a secure password"
                   />
                   {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
                 </div>
@@ -214,6 +257,7 @@ Please guide me through the admission process.`;
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
                     className={errors.email ? 'border-red-500' : ''}
+                    placeholder="Enter your email address"
                   />
                   {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                 </div>
