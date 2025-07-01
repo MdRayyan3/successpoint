@@ -1,162 +1,207 @@
 
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, Clock, Users } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
 const Contact = () => {
   return (
-    <div className="min-h-screen py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">Contact Us</h1>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30">
+      {/* Hero Section */}
+      <section className="relative py-20 bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="absolute inset-0 animate-gradient bg-gradient-to-r from-red-500/20 to-purple-500/20"></div>
+        
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-float"></div>
+        <div className="absolute top-40 right-20 w-32 h-32 bg-pink-300/20 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-purple-300/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center text-white animate-fade-in">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-scale-in">
+              Get In <span className="text-yellow-300">Touch</span>
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 animate-slide-in-right opacity-90">
+              Ready to start your success journey? We're here to help!
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 animate-bounce-in">
+              <Button className="bg-white text-red-600 hover:bg-gray-100 hover:scale-105 transform transition-all duration-300 shadow-lg px-8 py-3 text-lg font-semibold">
+                <MessageCircle className="mr-2" size={20} />
+                Chat with Us
+              </Button>
+              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-red-600 hover:scale-105 transform transition-all duration-300 px-8 py-3 text-lg font-semibold">
+                <Phone className="mr-2" size={20} />
+                Call Now
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          {/* Teacher Contact Section */}
-          <div className="mb-12">
-            <Card className="bg-gradient-to-r from-blue-50 to-red-50">
-              <CardHeader>
-                <CardTitle className="text-2xl text-center text-gray-800">Get in Touch with Our Head Teacher</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-col md:flex-row items-center gap-8">
-                  <div className="w-32 h-32 rounded-full overflow-hidden shadow-lg">
+      <div className="container mx-auto px-4 -mt-16 relative z-20">
+        {/* Teacher Contact Highlight */}
+        <div className="mb-16 animate-fade-in">
+          <Card className="bg-gradient-to-r from-blue-50 to-red-50 shadow-2xl hover:shadow-3xl transform hover:scale-[1.02] transition-all duration-500 border-none">
+            <CardHeader className="text-center pb-4">
+              <CardTitle className="text-3xl md:text-4xl text-gray-800 font-bold">
+                Meet Our <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">Head Teacher</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-col lg:flex-row items-center gap-8 p-6">
+                <div className="relative group">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-red-500 to-pink-500 rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300 animate-pulse"></div>
+                  <div className="relative w-40 h-40 rounded-full overflow-hidden shadow-2xl group-hover:scale-110 transform transition-all duration-500">
                     <img 
                       src="/lovable-uploads/e23f35c3-881c-4a15-ad66-590640806b5a.png" 
                       alt="Md. Khurshid Alam Sir" 
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="flex-1 text-center md:text-left">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-4">Md. Khurshid Alam Sir</h3>
-                    <p className="text-gray-600 mb-6">
-                      Head Teacher & Director at Success Point Coaching Centre. 
-                      Feel free to contact for any queries regarding admission, courses, or academic guidance.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                      <a href="tel:9163924237" className="flex items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-                        <Phone size={16} className="mr-2" />
-                        Call: 9163924237
-                      </a>
-                      <a href="https://wa.me/919163924237" className="flex items-center justify-center bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors">
-                        WhatsApp
-                      </a>
-                    </div>
+                </div>
+                <div className="flex-1 text-center lg:text-left">
+                  <h3 className="text-3xl font-bold text-gray-800 mb-2">Md. Khurshid Alam Sir</h3>
+                  <p className="text-red-600 font-semibold text-lg mb-4">Head Teacher & Director</p>
+                  <p className="text-gray-600 mb-6 text-lg leading-relaxed">
+                    Leading Success Point with excellence and dedication. 
+                    Get personalized guidance for your academic journey and career goals.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-300 shadow-lg px-6 py-3">
+                      <Phone size={16} className="mr-2" />
+                      Call: 9163924237
+                    </Button>
+                    <Button className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 transform hover:scale-105 transition-all duration-300 shadow-lg px-6 py-3">
+                      <MessageCircle size={16} className="mr-2" />
+                      WhatsApp
+                    </Button>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Contact Information Grid */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center text-red-600">
-                  <Phone className="mr-2" size={24} />
-                  Phone Numbers
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <a href="tel:9163924237" className="text-lg text-gray-700 hover:text-red-600 transition-colors block">
-                    📞 9163924237
-                  </a>
-                </div>
-                <div>
-                  <a href="tel:7003837463" className="text-lg text-gray-700 hover:text-red-600 transition-colors block">
-                    📞 7003837463
-                  </a>
-                </div>
-                <div className="pt-4">
-                  <p className="text-sm text-gray-600">Available for calls during office hours</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center text-blue-600">
-                  <Mail className="mr-2" size={24} />
-                  Email & WhatsApp
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <a href="mailto:rayyanmd130@gmail.com" className="text-lg text-gray-700 hover:text-blue-600 transition-colors block">
-                    ✉️ rayyanmd130@gmail.com
-                  </a>
-                </div>
-                <div>
-                  <a href="https://wa.me/919163924237" className="text-lg text-gray-700 hover:text-green-600 transition-colors block">
-                    💬 WhatsApp: 9163924237
-                  </a>
-                </div>
-                <div>
-                  <a href="https://wa.me/917003837463" className="text-lg text-gray-700 hover:text-green-600 transition-colors block">
-                    💬 WhatsApp: 7003837463
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Location Section */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center text-green-600">
-                <MapPin className="mr-2" size={24} />
-                Our Location
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-800 mb-2">Address</h4>
-                  <p className="text-gray-600">Rajabazar (Near Danish Restaurant)</p>
-                </div>
-                
-                <div className="w-full h-64 rounded-lg overflow-hidden shadow-lg">
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.0123456789!2d88.3639!3d22.5726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDM0JzIxLjQiTiA4OMKwMjEnNTAuMCJF!5e0!3m2!1sen!2sin!4v1640000000000!5m2!1sen!2sin"
-                    width="100%" 
-                    height="100%" 
-                    style={{ border: 0 }} 
-                    allowFullScreen 
-                    loading="lazy"
-                    title="Success Point Location"
-                  ></iframe>
-                </div>
-                
-                <div className="text-center">
-                  <a 
-                    href="https://maps.app.goo.gl/eepnR5hKncrbXDkz5?g_st=a" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors"
-                  >
-                    <MapPin size={16} className="mr-2" />
-                    Get Directions on Google Maps
-                  </a>
                 </div>
               </div>
             </CardContent>
           </Card>
+        </div>
 
-          {/* Quick Action Buttons */}
-          <div className="mt-12 text-center">
-            <div className="bg-white p-8 rounded-xl shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">Ready to Join Success Point?</h3>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/admission" className="bg-red-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
-                  Apply for Admission
+        {/* Contact Methods Grid */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <Card className="group hover-lift bg-white/80 backdrop-blur-sm border-none shadow-xl hover:shadow-2xl transition-all duration-500 animate-fade-in">
+            <CardHeader className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transform transition-all duration-300">
+                <Phone className="text-white" size={24} />
+              </div>
+              <CardTitle className="text-red-600 text-xl">Phone Support</CardTitle>
+            </CardHeader>
+            <CardContent className="text-center space-y-4">
+              <div className="space-y-2">
+                <a href="tel:9163924237" className="text-lg text-gray-700 hover:text-red-600 transition-colors duration-300 block font-semibold">
+                  📞 9163924237
                 </a>
-                <a href="/registration" className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                  Register Now
-                </a>
-                <a href="https://wa.me/919163924237" className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-                  Chat on WhatsApp
+                <a href="tel:7003837463" className="text-lg text-gray-700 hover:text-red-600 transition-colors duration-300 block font-semibold">
+                  📞 7003837463
                 </a>
               </div>
+              <div className="flex items-center justify-center text-sm text-gray-600 mt-4">
+                <Clock size={16} className="mr-2" />
+                Available during office hours
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="group hover-lift bg-white/80 backdrop-blur-sm border-none shadow-xl hover:shadow-2xl transition-all duration-500 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <CardHeader className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transform transition-all duration-300">
+                <Mail className="text-white" size={24} />
+              </div>
+              <CardTitle className="text-blue-600 text-xl">Email & Chat</CardTitle>
+            </CardHeader>
+            <CardContent className="text-center space-y-4">
+              <div className="space-y-2">
+                <a href="mailto:rayyanmd130@gmail.com" className="text-lg text-gray-700 hover:text-blue-600 transition-colors duration-300 block font-semibold">
+                  ✉️ rayyanmd130@gmail.com
+                </a>
+                <a href="https://wa.me/919163924237" className="text-lg text-gray-700 hover:text-green-600 transition-colors duration-300 block font-semibold">
+                  💬 WhatsApp Chat
+                </a>
+              </div>
+              <div className="flex items-center justify-center text-sm text-gray-600 mt-4">
+                <MessageCircle size={16} className="mr-2" />
+                Quick response guaranteed
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="group hover-lift bg-white/80 backdrop-blur-sm border-none shadow-xl hover:shadow-2xl transition-all duration-500 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <CardHeader className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transform transition-all duration-300">
+                <MapPin className="text-white" size={24} />
+              </div>
+              <CardTitle className="text-green-600 text-xl">Visit Us</CardTitle>
+            </CardHeader>
+            <CardContent className="text-center space-y-4">
+              <div>
+                <p className="text-lg font-semibold text-gray-800 mb-2">📍 Our Location</p>
+                <p className="text-gray-600">Rajabazar (Near Danish Restaurant)</p>
+              </div>
+              <div className="flex items-center justify-center text-sm text-gray-600 mt-4">
+                <Users size={16} className="mr-2" />
+                Walk-ins welcome
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Interactive Map Section */}
+        <Card className="mb-16 shadow-2xl border-none overflow-hidden animate-fade-in">
+          <CardHeader className="bg-gradient-to-r from-green-600 to-teal-600 text-white text-center py-8">
+            <CardTitle className="text-3xl font-bold flex items-center justify-center">
+              <MapPin className="mr-3" size={32} />
+              Find Us Here
+            </CardTitle>
+            <p className="text-green-100 mt-2">Located in the heart of Rajabazar for easy access</p>
+          </CardHeader>
+          <CardContent className="p-0">
+            <div className="relative">
+              <div className="w-full h-80 md:h-96 rounded-b-lg overflow-hidden">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.0123456789!2d88.3639!3d22.5726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDM0JzIxLjQiTiA4OMKwMjEnNTAuMCJF!5e0!3m2!1sen!2sin!4v1640000000000!5m2!1sen!2sin"
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy"
+                  title="Success Point Location"
+                  className="hover:saturate-150 transition-all duration-500"
+                ></iframe>
+              </div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <Button className="w-full bg-green-600 hover:bg-green-700 transform hover:scale-105 transition-all duration-300 shadow-lg">
+                  <MapPin size={16} className="mr-2" />
+                  Get Directions on Google Maps
+                </Button>
+              </div>
             </div>
-          </div>
+          </CardContent>
+        </Card>
+
+        {/* Call-to-Action Section */}
+        <div className="text-center mb-16 animate-bounce-in">
+          <Card className="bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 text-white border-none shadow-2xl hover:shadow-3xl transform hover:scale-[1.02] transition-all duration-500">
+            <CardContent className="p-12">
+              <h3 className="text-4xl font-bold mb-6">Ready to Start Your Success Journey?</h3>
+              <p className="text-xl mb-8 opacity-90">Join thousands of successful students at Success Point Coaching Centre</p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Button className="bg-white text-red-600 hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg px-8 py-4 text-lg font-semibold">
+                  🎓 Apply for Admission
+                </Button>
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-red-600 transform hover:scale-105 transition-all duration-300 px-8 py-4 text-lg font-semibold">
+                  📱 Chat on WhatsApp
+                </Button>
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-red-600 transform hover:scale-105 transition-all duration-300 px-8 py-4 text-lg font-semibold">
+                  👥 Meet Our Faculty
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>
