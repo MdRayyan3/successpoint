@@ -1,5 +1,4 @@
-
-import { Phone, Mail, MapPin, MessageCircle, Clock, Users } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, Clock, Users, GraduationCap } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
@@ -93,11 +92,13 @@ const Contact = () => {
             </CardHeader>
             <CardContent className="text-center space-y-4">
               <div className="space-y-2">
-                <a href="tel:9163924237" className="text-lg text-gray-700 hover:text-cyan-600 transition-colors duration-300 block font-semibold hover-scale">
-                  📞 9163924237
+                <a href="tel:9163924237" className="text-lg text-gray-700 hover:text-cyan-600 transition-colors duration-300 block font-semibold hover-scale flex items-center justify-center">
+                  <Phone size={18} className="mr-2" />
+                  9163924237
                 </a>
-                <a href="tel:7003837463" className="text-lg text-gray-700 hover:text-cyan-600 transition-colors duration-300 block font-semibold hover-scale">
-                  📞 7003837463
+                <a href="tel:7003837463" className="text-lg text-gray-700 hover:text-cyan-600 transition-colors duration-300 block font-semibold hover-scale flex items-center justify-center">
+                  <Phone size={18} className="mr-2" />
+                  7003837463
                 </a>
               </div>
               <div className="flex items-center justify-center text-sm text-gray-600 mt-4">
@@ -116,11 +117,13 @@ const Contact = () => {
             </CardHeader>
             <CardContent className="text-center space-y-4">
               <div className="space-y-2">
-                <a href="mailto:rayyanmd130@gmail.com" className="text-lg text-gray-700 hover:text-violet-600 transition-colors duration-300 block font-semibold hover-scale">
-                  ✉️ rayyanmd130@gmail.com
+                <a href="mailto:rayyanmd130@gmail.com" className="text-lg text-gray-700 hover:text-violet-600 transition-colors duration-300 block font-semibold hover-scale flex items-center justify-center">
+                  <Mail size={18} className="mr-2" />
+                  rayyanmd130@gmail.com
                 </a>
-                <a href="https://wa.me/919163924237" className="text-lg text-gray-700 hover:text-emerald-600 transition-colors duration-300 block font-semibold hover-scale">
-                  💬 WhatsApp Chat
+                <a href="https://wa.me/919163924237" className="text-lg text-gray-700 hover:text-emerald-600 transition-colors duration-300 block font-semibold hover-scale flex items-center justify-center">
+                  <MessageCircle size={18} className="mr-2" />
+                  WhatsApp Chat
                 </a>
               </div>
               <div className="flex items-center justify-center text-sm text-gray-600 mt-4">
@@ -139,7 +142,10 @@ const Contact = () => {
             </CardHeader>
             <CardContent className="text-center space-y-4">
               <div>
-                <p className="text-lg font-semibold text-gray-800 mb-2">📍 Our Location</p>
+                <p className="text-lg font-semibold text-gray-800 mb-2 flex items-center justify-center">
+                  <MapPin size={18} className="mr-2" />
+                  Our Location
+                </p>
                 <p className="text-gray-600">Rajabazar (Near Danish Restaurant)</p>
               </div>
               <div className="flex items-center justify-center text-sm text-gray-600 mt-4">
@@ -190,15 +196,17 @@ const Contact = () => {
               <h3 className="text-4xl font-bold mb-6 gradient-text-rainbow">Ready to Start Your Success Journey?</h3>
               <p className="text-xl mb-8 opacity-90">Join thousands of successful students at Success Point Coaching Centre</p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button className="btn-modern bg-white text-violet-600 hover:bg-gray-100">
-                  🎓 Apply for Admission
+                <Button className="btn-modern bg-white text-violet-600 hover:bg-gray-100 flex items-center justify-center">
+                  <GraduationCap size={16} className="mr-2" />
+                  Apply for Admission
                 </Button>
                 <Button className="btn-modern bg-transparent border-2 border-white text-white hover:bg-white hover:text-violet-600">
                   <MessageCircle size={16} className="mr-2" />
                   Chat on WhatsApp
                 </Button>
                 <Button className="btn-modern bg-transparent border-2 border-white text-white hover:bg-white hover:text-violet-600">
-                  👥 Meet Our Faculty
+                  <Users size={16} className="mr-2" />
+                  Meet Our Faculty
                 </Button>
               </div>
             </CardContent>
