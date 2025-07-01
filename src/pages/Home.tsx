@@ -1,5 +1,5 @@
 
-import { Phone, Mail, MapPin, GraduationCap, Users, Award, BookOpen, Star } from 'lucide-react';
+import { Phone, Mail, MapPin, GraduationCap, Users, Award, BookOpen, Star, MessageCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const Home = () => {
