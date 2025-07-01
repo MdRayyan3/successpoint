@@ -6,12 +6,12 @@ const Home = () => {
   return (
     <div className="min-h-screen overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 flex items-center">
+      <section className="relative min-h-screen bg-gradient-to-br from-violet-50 via-cyan-50 to-emerald-50 flex items-center">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 left-10 w-20 h-20 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-20 animate-float"></div>
-          <div className="absolute top-40 right-20 w-32 h-32 bg-gradient-to-r from-pink-400 to-red-400 rounded-full opacity-20 animate-float" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute bottom-20 left-20 w-16 h-16 bg-gradient-to-r from-green-400 to-blue-400 rounded-full opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-10 left-10 w-20 h-20 bg-gradient-to-r from-violet-400 to-purple-400 rounded-full opacity-20 animate-float"></div>
+          <div className="absolute top-40 right-20 w-32 h-32 bg-gradient-to-r from-fuchsia-400 to-pink-400 rounded-full opacity-20 animate-float" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-20 left-20 w-16 h-16 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -19,7 +19,7 @@ const Home = () => {
             <div className="animate-fade-in">
               <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
                 Welcome to{' '}
-                <span className="bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 bg-clip-text text-transparent animate-gradient">
+                <span className="bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-transparent animate-gradient">
                   SUCCESS POINT
                 </span>
               </h1>
@@ -29,11 +29,10 @@ const Home = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in" style={{ animationDelay: '0.6s' }}>
-              <a href="/admission" className="group relative px-8 py-4 bg-gradient-to-r from-red-600 to-pink-600 text-white rounded-2xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105">
+              <a href="/admission" className="btn-modern bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white hover:from-violet-700 hover:to-fuchsia-700">
                 <span className="relative z-10">Apply for Admission</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-red-700 to-pink-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
-              <a href="/contact" className="group relative px-8 py-4 border-2 border-red-600 text-red-600 rounded-2xl font-semibold text-lg hover:bg-gradient-to-r hover:from-red-600 hover:to-pink-600 hover:text-white transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 bg-white/50 backdrop-blur-sm">
+              <a href="/contact" className="btn-modern bg-transparent border-2 border-violet-600 text-violet-600 hover:bg-gradient-to-r hover:from-violet-600 hover:to-fuchsia-600 hover:text-white hover:border-transparent">
                 Contact Us
               </a>
             </div>
@@ -42,31 +41,31 @@ const Home = () => {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
+          <div className="w-6 h-10 border-2 border-violet-400 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-violet-400 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
 
       {/* Head Teacher Section */}
-      <section className="py-20 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-50 to-transparent opacity-50"></div>
+      <section className="py-20 bg-gradient-to-br from-white via-cyan-50 to-violet-50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-violet-50 to-transparent opacity-50"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16 animate-fade-in">
-              <h2 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+              <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-600 to-violet-600 bg-clip-text text-transparent mb-4">
                 Meet Our Head Teacher
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-violet-500 mx-auto rounded-full"></div>
             </div>
             
-            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 animate-scale-in overflow-hidden">
+            <Card className="card-modern glass animate-scale-in">
               <CardContent className="p-0">
                 <div className="flex flex-col lg:flex-row items-center">
                   <div className="lg:w-1/3 p-8 lg:p-12">
                     <div className="relative group">
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl transform rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-violet-500 rounded-3xl transform rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
                       <div className="relative w-64 h-64 mx-auto rounded-3xl overflow-hidden shadow-2xl">
                         <img 
                           src="/lovable-uploads/e23f35c3-881c-4a15-ad66-590640806b5a.png" 
@@ -85,12 +84,12 @@ const Home = () => {
                       Our experienced and dedicated head teacher, committed to providing the best education and guidance to all our students. With years of experience in comprehensive coaching, Md. Khurshid Alam Sir ensures that every student receives personalized attention and quality education.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4">
-                      <a href="tel:9163924237" className="group flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                        <Phone size={16} className="mr-2 group-hover:animate-pulse" />
+                      <a href="tel:9163924237" className="btn-modern bg-gradient-to-r from-cyan-600 to-blue-700 text-white hover:from-cyan-700 hover:to-blue-800">
+                        <Phone size={16} className="mr-2" />
                         Call Now
                       </a>
-                      <a href="https://wa.me/919163924237" className="group flex items-center justify-center bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 rounded-xl hover:from-green-700 hover:to-green-800 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                        <span className="mr-2 group-hover:animate-pulse">💬</span>
+                      <a href="https://wa.me/919163924237" className="btn-modern bg-gradient-to-r from-emerald-600 to-teal-700 text-white hover:from-emerald-700 hover:to-teal-800">
+                        <MessageCircle size={16} className="mr-2" />
                         WhatsApp
                       </a>
                     </div>
@@ -103,13 +102,13 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative">
+      <section className="py-20 bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
+            <h2 className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent mb-4">
               Why Choose Success Point?
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-fuchsia-500 mx-auto rounded-full"></div>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -118,32 +117,32 @@ const Home = () => {
                 icon: <GraduationCap className="w-8 h-8" />,
                 title: "Expert Teachers",
                 description: "Best and experienced teachers available for each subject with personalized attention.",
-                gradient: "from-blue-500 to-purple-600",
-                bgGradient: "from-blue-50 to-purple-50"
+                gradient: "from-cyan-500 to-blue-600",
+                bgGradient: "from-cyan-50 to-blue-50"
               },
               {
                 icon: <BookOpen className="w-8 h-8" />,
                 title: "Digital Classes",
                 description: "Fully digital classes with offline, online, and recorded options for flexible learning.",
-                gradient: "from-green-500 to-blue-600",
-                bgGradient: "from-green-50 to-blue-50"
+                gradient: "from-emerald-500 to-teal-600",
+                bgGradient: "from-emerald-50 to-teal-50"
               },
               {
                 icon: <Award className="w-8 h-8" />,
                 title: "Comprehensive Curriculum",
                 description: "Complete coverage of Class 11th, 12th, and B.Com syllabus with regular assessments.",
-                gradient: "from-orange-500 to-red-600",
-                bgGradient: "from-orange-50 to-red-50"
+                gradient: "from-violet-500 to-purple-600",
+                bgGradient: "from-violet-50 to-purple-50"
               }
             ].map((feature, index) => (
               <Card 
                 key={index}
-                className={`group bg-gradient-to-br ${feature.bgGradient} border-0 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 animate-scale-in hover-lift`}
+                className={`card-modern group bg-gradient-to-br ${feature.bgGradient} animate-scale-in`}
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <CardContent className="p-8 text-center relative overflow-hidden">
                   <div className={`absolute inset-0 bg-gradient-to-r ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
-                  <div className={`w-16 h-16 bg-gradient-to-r ${feature.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-300 group-hover:rotate-3`}>
+                  <div className={`w-16 h-16 bg-gradient-to-r ${feature.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-300 group-hover:rotate-3 animate-pulse-glow`}>
                     {feature.icon}
                   </div>
                   <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-gray-900">
@@ -160,7 +159,7 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -172,8 +171,8 @@ const Home = () => {
                 { number: "10+", label: "Years Experience", icon: <Award className="w-8 h-8" /> },
                 { number: "8+", label: "Expert Teachers", icon: <GraduationCap className="w-8 h-8" /> }
               ].map((stat, index) => (
-                <div key={index} className="text-center animate-bounce-in" style={{ animationDelay: `${index * 100}ms` }}>
-                  <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                <div key={index} className="text-center animate-bounce-in hover-scale" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm animate-pulse-glow">
                     {stat.icon}
                   </div>
                   <div className="text-4xl font-bold mb-2">{stat.number}</div>
@@ -186,21 +185,21 @@ const Home = () => {
       </section>
 
       {/* Location Section */}
-      <section className="py-20 bg-gradient-to-br from-white to-gray-50">
+      <section className="py-20 bg-gradient-to-br from-white via-emerald-50 to-teal-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-4">
+            <h2 className="text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4">
               Visit Our Location
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full"></div>
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <Card className="bg-white border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 animate-scale-in overflow-hidden">
+            <Card className="card-modern animate-scale-in">
               <CardContent className="p-0">
                 <div className="p-8 text-center">
                   <div className="flex items-center justify-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                    <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center mr-4 shadow-lg animate-pulse-glow">
                       <MapPin className="text-white" size={24} />
                     </div>
                     <span className="text-2xl font-semibold text-gray-800">Rajabazar (Near Danish Restaurant)</span>
@@ -225,9 +224,9 @@ const Home = () => {
                     href="https://maps.app.goo.gl/eepnR5hKncrbXDkz5?g_st=a" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-4 rounded-2xl hover:from-green-700 hover:to-blue-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl font-semibold text-lg"
+                    className="btn-modern bg-gradient-to-r from-emerald-600 to-teal-600 text-white hover:from-emerald-700 hover:to-teal-700 inline-flex items-center"
                   >
-                    <MapPin size={20} className="mr-3 group-hover:animate-pulse" />
+                    <MapPin size={20} className="mr-3" />
                     Get Directions
                   </a>
                 </div>

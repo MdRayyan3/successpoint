@@ -3,45 +3,88 @@ import { Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8">
-      <div className="container mx-auto px-4">
+    <footer className="bg-gradient-to-r from-slate-800 via-gray-800 to-slate-800 text-white py-12 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-r from-violet-900/20 via-purple-900/20 to-fuchsia-900/20"></div>
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-500 via-purple-500 to-fuchsia-500"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="text-xl font-bold text-red-400 mb-4">SUCCESS POINT</h3>
-            <p className="text-gray-300">
-              A Comprehensive Coaching Classes providing quality education for Class 11th, 12th, and B.Com students.
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3 group">
+              <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-fuchsia-600 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-300 shadow-lg">
+                <span className="text-white font-bold text-sm">SP</span>
+              </div>
+              <h3 className="text-xl font-bold text-transparent bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text">
+                SUCCESS POINT
+              </h3>
+            </div>
+            <p className="text-gray-300 leading-relaxed">
+              A Comprehensive Coaching Classes providing quality education for Class 11th, 12th, and B.Com students with modern teaching methods and personalized attention.
             </p>
           </div>
           
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><a href="/about" className="text-gray-300 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="/admission" className="text-gray-300 hover:text-white transition-colors">Admission</a></li>
-              <li><a href="/registration" className="text-gray-300 hover:text-white transition-colors">Registration</a></li>
-              <li><a href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact Us</a></li>
+          <div className="space-y-4">
+            <h4 className="text-lg font-semibold mb-4 text-cyan-400">Quick Links</h4>
+            <ul className="space-y-3">
+              {[
+                { name: 'About Us', href: '/about' },
+                { name: 'Our Faculty', href: '/faculty' },
+                { name: 'Admission', href: '/admission' },
+                { name: 'Contact Us', href: '/contact' }
+              ].map((link, index) => (
+                <li key={index}>
+                  <a 
+                    href={link.href} 
+                    className="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block relative group"
+                  >
+                    <span className="relative z-10">{link.name}</span>
+                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-500 to-fuchsia-500 group-hover:w-full transition-all duration-300"></div>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
           
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
-            <div className="space-y-2">
-              <div className="flex items-center space-x-2">
-                <Phone size={16} />
-                <span className="text-gray-300">9163924237 / 7003837463</span>
+          <div className="space-y-4">
+            <h4 className="text-lg font-semibold mb-4 text-emerald-400">Contact Info</h4>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3 group hover:translate-x-2 transition-transform duration-300">
+                <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center shadow-lg">
+                  <Phone size={18} className="text-white" />
+                </div>
+                <div>
+                  <p className="text-gray-300 text-sm">Call us anytime</p>
+                  <p className="text-white font-semibold">9163924237 / 7003837463</p>
+                </div>
               </div>
-              <div className="flex items-center space-x-2">
-                <Mail size={16} />
-                <span className="text-gray-300">rayyanmd130@gmail.com</span>
+              <div className="flex items-center space-x-3 group hover:translate-x-2 transition-transform duration-300">
+                <div className="w-10 h-10 bg-gradient-to-r from-violet-500 to-purple-500 rounded-lg flex items-center justify-center shadow-lg">
+                  <Mail size={18} className="text-white" />
+                </div>
+                <div>
+                  <p className="text-gray-300 text-sm">Email us</p>
+                  <p className="text-white font-semibold">rayyanmd130@gmail.com</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
         
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-gray-400">
-            © 2024 Success Point Coaching Centre. All rights reserved.
-          </p>
+        <div className="border-t border-gray-700/50 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-gray-400 text-center md:text-left">
+              © 2024 Success Point Coaching Centre. All rights reserved.
+            </p>
+            <div className="flex space-x-6">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
+                Terms of Service
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

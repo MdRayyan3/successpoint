@@ -3,10 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* Enhanced Design System with Rich Colors */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -99,7 +96,7 @@ All colors MUST be HSL.
   }
 }
 
-/* Enhanced Animations */
+/* Enhanced Modern Animations */
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -168,6 +165,24 @@ All colors MUST be HSL.
   }
 }
 
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+  }
+}
+
 .animate-fade-in {
   animation: fade-in 0.6s ease-out forwards;
 }
@@ -193,14 +208,24 @@ All colors MUST be HSL.
   animation: float 3s ease-in-out infinite;
 }
 
-/* Hover Effects */
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Enhanced Hover Effects */
 .hover-lift {
   transition: all 0.3s ease;
 }
 
 .hover-lift:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .hover-glow {
@@ -208,17 +233,31 @@ All colors MUST be HSL.
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
 }
 
-/* Glass Effect */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Modern Glass Effect */
 .glass {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Gradient Text */
+.glass-dark {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced Gradient Text */
 .gradient-text {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
@@ -226,21 +265,60 @@ All colors MUST be HSL.
   background-clip: text;
 }
 
-/* Custom Scrollbar */
+.gradient-text-rainbow {
+  background: linear-gradient(135deg, #ff6b6b, #ffd93d, #6bcf7f, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 300% 300%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Modern Button Styles */
+.btn-modern {
+  @apply relative overflow-hidden px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl;
+}
+
+.btn-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-modern:hover::before {
+  left: 100%;
+}
+
+/* Enhanced Card Styles */
+.card-modern {
+  @apply bg-white/80 backdrop-blur-sm border-0 shadow-xl hover:shadow-2xl transition-all duration-500 rounded-3xl overflow-hidden;
+}
+
+.card-modern:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* Custom Scrollbar Enhancement */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: linear-gradient(180deg, #f1f1f1, #e8e8e8);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(180deg, #667eea, #764ba2);
   border-radius: 10px;
+  border: 2px solid #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+  background: linear-gradient(180deg, #5a67d8, #6b46c1);
 }

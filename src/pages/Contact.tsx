@@ -5,11 +5,11 @@ import { Button } from '@/components/ui/button';
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30">
+    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-cyan-50 to-emerald-50">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 overflow-hidden">
+      <section className="relative py-20 bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
-        <div className="absolute inset-0 animate-gradient bg-gradient-to-r from-red-500/20 to-purple-500/20"></div>
+        <div className="absolute inset-0 animate-gradient bg-gradient-to-r from-violet-500/20 to-fuchsia-500/20"></div>
         
         {/* Floating Elements */}
         <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-float"></div>
@@ -19,17 +19,17 @@ const Contact = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center text-white animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-scale-in">
-              Get In <span className="text-yellow-300">Touch</span>
+              Get In <span className="text-yellow-300 animate-shimmer">Touch</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 animate-slide-in-right opacity-90">
               Ready to start your success journey? We're here to help!
             </p>
             <div className="flex flex-wrap justify-center gap-4 animate-bounce-in">
-              <Button className="bg-white text-red-600 hover:bg-gray-100 hover:scale-105 transform transition-all duration-300 shadow-lg px-8 py-3 text-lg font-semibold">
+              <Button className="btn-modern bg-white text-violet-600 hover:bg-gray-100">
                 <MessageCircle className="mr-2" size={20} />
                 Chat with Us
               </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-red-600 hover:scale-105 transform transition-all duration-300 px-8 py-3 text-lg font-semibold">
+              <Button className="btn-modern bg-transparent border-2 border-white text-white hover:bg-white hover:text-violet-600">
                 <Phone className="mr-2" size={20} />
                 Call Now
               </Button>
@@ -41,16 +41,16 @@ const Contact = () => {
       <div className="container mx-auto px-4 -mt-16 relative z-20">
         {/* Teacher Contact Highlight */}
         <div className="mb-16 animate-fade-in">
-          <Card className="bg-gradient-to-r from-blue-50 to-red-50 shadow-2xl hover:shadow-3xl transform hover:scale-[1.02] transition-all duration-500 border-none">
+          <Card className="card-modern bg-gradient-to-r from-cyan-50 via-violet-50 to-fuchsia-50 hover:shadow-3xl">
             <CardHeader className="text-center pb-4">
               <CardTitle className="text-3xl md:text-4xl text-gray-800 font-bold">
-                Meet Our <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">Head Teacher</span>
+                Meet Our <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">Head Teacher</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex flex-col lg:flex-row items-center gap-8 p-6">
                 <div className="relative group">
-                  <div className="absolute -inset-4 bg-gradient-to-r from-red-500 to-pink-500 rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300 animate-pulse"></div>
+                  <div className="absolute -inset-4 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300 animate-pulse-glow"></div>
                   <div className="relative w-40 h-40 rounded-full overflow-hidden shadow-2xl group-hover:scale-110 transform transition-all duration-500">
                     <img 
                       src="/lovable-uploads/e23f35c3-881c-4a15-ad66-590640806b5a.png" 
@@ -61,17 +61,17 @@ const Contact = () => {
                 </div>
                 <div className="flex-1 text-center lg:text-left">
                   <h3 className="text-3xl font-bold text-gray-800 mb-2">Md. Khurshid Alam Sir</h3>
-                  <p className="text-red-600 font-semibold text-lg mb-4">Head Teacher & Director</p>
+                  <p className="text-violet-600 font-semibold text-lg mb-4">Head Teacher & Director</p>
                   <p className="text-gray-600 mb-6 text-lg leading-relaxed">
                     Leading Success Point with excellence and dedication. 
                     Get personalized guidance for your academic journey and career goals.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-300 shadow-lg px-6 py-3">
+                    <Button className="btn-modern bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700">
                       <Phone size={16} className="mr-2" />
                       Call: 9163924237
                     </Button>
-                    <Button className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 transform hover:scale-105 transition-all duration-300 shadow-lg px-6 py-3">
+                    <Button className="btn-modern bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:from-emerald-600 hover:to-teal-700">
                       <MessageCircle size={16} className="mr-2" />
                       WhatsApp
                     </Button>
@@ -84,19 +84,19 @@ const Contact = () => {
 
         {/* Contact Methods Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <Card className="group hover-lift bg-white/80 backdrop-blur-sm border-none shadow-xl hover:shadow-2xl transition-all duration-500 animate-fade-in">
+          <Card className="card-modern group bg-gradient-to-br from-cyan-50 to-blue-50 animate-fade-in">
             <CardHeader className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transform transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transform transition-all duration-300 animate-pulse-glow">
                 <Phone className="text-white" size={24} />
               </div>
-              <CardTitle className="text-red-600 text-xl">Phone Support</CardTitle>
+              <CardTitle className="text-cyan-600 text-xl">Phone Support</CardTitle>
             </CardHeader>
             <CardContent className="text-center space-y-4">
               <div className="space-y-2">
-                <a href="tel:9163924237" className="text-lg text-gray-700 hover:text-red-600 transition-colors duration-300 block font-semibold">
+                <a href="tel:9163924237" className="text-lg text-gray-700 hover:text-cyan-600 transition-colors duration-300 block font-semibold hover-scale">
                   📞 9163924237
                 </a>
-                <a href="tel:7003837463" className="text-lg text-gray-700 hover:text-red-600 transition-colors duration-300 block font-semibold">
+                <a href="tel:7003837463" className="text-lg text-gray-700 hover:text-cyan-600 transition-colors duration-300 block font-semibold hover-scale">
                   📞 7003837463
                 </a>
               </div>
@@ -107,19 +107,19 @@ const Contact = () => {
             </CardContent>
           </Card>
 
-          <Card className="group hover-lift bg-white/80 backdrop-blur-sm border-none shadow-xl hover:shadow-2xl transition-all duration-500 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <Card className="card-modern group bg-gradient-to-br from-violet-50 to-purple-50 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <CardHeader className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transform transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transform transition-all duration-300 animate-pulse-glow">
                 <Mail className="text-white" size={24} />
               </div>
-              <CardTitle className="text-blue-600 text-xl">Email & Chat</CardTitle>
+              <CardTitle className="text-violet-600 text-xl">Email & Chat</CardTitle>
             </CardHeader>
             <CardContent className="text-center space-y-4">
               <div className="space-y-2">
-                <a href="mailto:rayyanmd130@gmail.com" className="text-lg text-gray-700 hover:text-blue-600 transition-colors duration-300 block font-semibold">
+                <a href="mailto:rayyanmd130@gmail.com" className="text-lg text-gray-700 hover:text-violet-600 transition-colors duration-300 block font-semibold hover-scale">
                   ✉️ rayyanmd130@gmail.com
                 </a>
-                <a href="https://wa.me/919163924237" className="text-lg text-gray-700 hover:text-green-600 transition-colors duration-300 block font-semibold">
+                <a href="https://wa.me/919163924237" className="text-lg text-gray-700 hover:text-emerald-600 transition-colors duration-300 block font-semibold hover-scale">
                   💬 WhatsApp Chat
                 </a>
               </div>
@@ -130,12 +130,12 @@ const Contact = () => {
             </CardContent>
           </Card>
 
-          <Card className="group hover-lift bg-white/80 backdrop-blur-sm border-none shadow-xl hover:shadow-2xl transition-all duration-500 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <Card className="card-modern group bg-gradient-to-br from-emerald-50 to-teal-50 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <CardHeader className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transform transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transform transition-all duration-300 animate-pulse-glow">
                 <MapPin className="text-white" size={24} />
               </div>
-              <CardTitle className="text-green-600 text-xl">Visit Us</CardTitle>
+              <CardTitle className="text-emerald-600 text-xl">Visit Us</CardTitle>
             </CardHeader>
             <CardContent className="text-center space-y-4">
               <div>
@@ -151,13 +151,13 @@ const Contact = () => {
         </div>
 
         {/* Interactive Map Section */}
-        <Card className="mb-16 shadow-2xl border-none overflow-hidden animate-fade-in">
-          <CardHeader className="bg-gradient-to-r from-green-600 to-teal-600 text-white text-center py-8">
+        <Card className="card-modern mb-16 animate-fade-in">
+          <CardHeader className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-center py-8">
             <CardTitle className="text-3xl font-bold flex items-center justify-center">
               <MapPin className="mr-3" size={32} />
               Find Us Here
             </CardTitle>
-            <p className="text-green-100 mt-2">Located in the heart of Rajabazar for easy access</p>
+            <p className="text-emerald-100 mt-2">Located in the heart of Rajabazar for easy access</p>
           </CardHeader>
           <CardContent className="p-0">
             <div className="relative">
@@ -174,7 +174,7 @@ const Contact = () => {
                 ></iframe>
               </div>
               <div className="absolute bottom-4 left-4 right-4">
-                <Button className="w-full bg-green-600 hover:bg-green-700 transform hover:scale-105 transition-all duration-300 shadow-lg">
+                <Button className="btn-modern w-full bg-emerald-600 hover:bg-emerald-700 text-white">
                   <MapPin size={16} className="mr-2" />
                   Get Directions on Google Maps
                 </Button>
@@ -185,18 +185,19 @@ const Contact = () => {
 
         {/* Call-to-Action Section */}
         <div className="text-center mb-16 animate-bounce-in">
-          <Card className="bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 text-white border-none shadow-2xl hover:shadow-3xl transform hover:scale-[1.02] transition-all duration-500">
+          <Card className="card-modern bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 text-white">
             <CardContent className="p-12">
-              <h3 className="text-4xl font-bold mb-6">Ready to Start Your Success Journey?</h3>
+              <h3 className="text-4xl font-bold mb-6 gradient-text-rainbow">Ready to Start Your Success Journey?</h3>
               <p className="text-xl mb-8 opacity-90">Join thousands of successful students at Success Point Coaching Centre</p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button className="bg-white text-red-600 hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg px-8 py-4 text-lg font-semibold">
+                <Button className="btn-modern bg-white text-violet-600 hover:bg-gray-100">
                   🎓 Apply for Admission
                 </Button>
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-red-600 transform hover:scale-105 transition-all duration-300 px-8 py-4 text-lg font-semibold">
-                  📱 Chat on WhatsApp
+                <Button className="btn-modern bg-transparent border-2 border-white text-white hover:bg-white hover:text-violet-600">
+                  <MessageCircle size={16} className="mr-2" />
+                  Chat on WhatsApp
                 </Button>
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-red-600 transform hover:scale-105 transition-all duration-300 px-8 py-4 text-lg font-semibold">
+                <Button className="btn-modern bg-transparent border-2 border-white text-white hover:bg-white hover:text-violet-600">
                   👥 Meet Our Faculty
                 </Button>
               </div>
