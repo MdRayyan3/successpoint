@@ -10,7 +10,6 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import OurFaculty from "./pages/OurFaculty";
 import Admission from "./pages/Admission";
-import Registration from "./pages/Registration";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -30,7 +29,6 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/faculty" element={<OurFaculty />} />
               <Route path="/admission" element={<Admission />} />
-              <Route path="/registration" element={<Registration />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
