@@ -160,7 +160,7 @@ const Contact = () => {
             <div className="relative">
               <div className="w-full h-64 md:h-80 rounded-b-lg overflow-hidden">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.791!2d88.3646!3d22.5726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277b4c1b2e3e7%3A0x9c5d5e6f4a3b2c1d!2sRajabazar%2C%20Kolkata%2C%20West%20Bengal%20700054%2C%20India!5e0!3m2!1sen!2sin!4v1640000000000!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.208465820948!2d88.36210781495395!3d22.58135938516891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277594f1b5c1b%3A0x8e5b8b5c6b5d4e2a!2sRajabazar%2C%20Kolkata%2C%20West%20Bengal%20700054%2C%20India!5e0!3m2!1sen!2sin!4v1703076000000!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
@@ -171,7 +171,10 @@ const Contact = () => {
                 ></iframe>
               </div>
               <div className="absolute bottom-4 left-4 right-4">
-                <Button className="btn-modern w-full bg-emerald-600 hover:bg-emerald-700 text-white">
+                <Button 
+                  className="btn-modern w-full bg-emerald-600 hover:bg-emerald-700 text-white"
+                  onClick={() => window.open('https://maps.app.goo.gl/eepnR5hKncrbXDkz5?g_st=a', '_blank')}
+                >
                   <MapPin size={16} className="mr-2" />
                   Get Directions on Google Maps
                 </Button>
