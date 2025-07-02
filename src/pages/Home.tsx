@@ -1,6 +1,7 @@
 
-import { Phone, Mail, MapPin, GraduationCap, Users, Award, BookOpen, Star, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, GraduationCap, BookOpen, Award } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import AnimatedStats from '@/components/AnimatedStats';
 
 const Home = () => {
   return (
@@ -17,13 +18,13 @@ const Home = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="animate-fade-in">
-              <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
                 Welcome to{' '}
                 <span className="bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-transparent animate-gradient">
                   SUCCESS POINT
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed animate-slide-in-right" style={{ animationDelay: '0.3s' }}>
+              <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed animate-slide-in-right" style={{ animationDelay: '0.3s' }}>
                 A Comprehensive Coaching Classes dedicated to providing quality education and shaping bright futures for students in Class 11th, 12th, and B.Com programs.
               </p>
             </div>
@@ -48,13 +49,13 @@ const Home = () => {
       </section>
 
       {/* Head Teacher Section */}
-      <section className="py-20 bg-gradient-to-br from-white via-cyan-50 to-violet-50 relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-br from-white via-cyan-50 to-violet-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-violet-50 to-transparent opacity-50"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16 animate-fade-in">
-              <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-600 to-violet-600 bg-clip-text text-transparent mb-4">
+            <div className="text-center mb-12 animate-fade-in">
+              <h2 className="text-4xl font-bold bg-gradient-to-r from-cyan-600 to-violet-600 bg-clip-text text-transparent mb-4">
                 Meet Our Head Teacher
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-violet-500 mx-auto rounded-full"></div>
@@ -63,10 +64,10 @@ const Home = () => {
             <Card className="card-modern glass animate-scale-in">
               <CardContent className="p-0">
                 <div className="flex flex-col lg:flex-row items-center">
-                  <div className="lg:w-1/3 p-8 lg:p-12">
+                  <div className="lg:w-1/3 p-6 lg:p-8">
                     <div className="relative group">
                       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-violet-500 rounded-3xl transform rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
-                      <div className="relative w-64 h-64 mx-auto rounded-3xl overflow-hidden shadow-2xl">
+                      <div className="relative w-56 h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl">
                         <img 
                           src="/lovable-uploads/e23f35c3-881c-4a15-ad66-590640806b5a.png" 
                           alt="Md. Khurshid Alam Sir" 
@@ -76,11 +77,11 @@ const Home = () => {
                     </div>
                   </div>
                   
-                  <div className="lg:w-2/3 p-8 lg:p-12">
-                    <h3 className="text-3xl font-bold text-gray-800 mb-6">
+                  <div className="lg:w-2/3 p-6 lg:p-8">
+                    <h3 className="text-2xl font-bold text-gray-800 mb-4">
                       Md. Khurshid Alam Sir
                     </h3>
-                    <p className="text-gray-600 mb-8 leading-relaxed text-lg">
+                    <p className="text-gray-600 mb-6 leading-relaxed">
                       Our experienced and dedicated head teacher, committed to providing the best education and guidance to all our students. With years of experience in comprehensive coaching, Md. Khurshid Alam Sir ensures that every student receives personalized attention and quality education.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4">
@@ -89,7 +90,7 @@ const Home = () => {
                         Call Now
                       </a>
                       <a href="https://wa.me/919163924237" className="btn-modern bg-gradient-to-r from-emerald-600 to-teal-700 text-white hover:from-emerald-700 hover:to-teal-800">
-                        <MessageCircle size={16} className="mr-2" />
+                        <Phone size={16} className="mr-2" />
                         WhatsApp
                       </a>
                     </div>
@@ -102,10 +103,10 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 relative">
+      <section className="py-16 bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 relative">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent mb-4">
+          <div className="text-center mb-12 animate-fade-in">
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent mb-4">
               Why Choose Success Point?
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-fuchsia-500 mx-auto rounded-full"></div>
@@ -140,7 +141,7 @@ const Home = () => {
                 className={`card-modern group bg-gradient-to-br ${feature.bgGradient} animate-scale-in`}
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <CardContent className="p-8 text-center relative overflow-hidden">
+                <CardContent className="p-6 text-center relative overflow-hidden">
                   <div className={`absolute inset-0 bg-gradient-to-r ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
                   <div className={`w-16 h-16 bg-gradient-to-r ${feature.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-300 group-hover:rotate-3 animate-pulse-glow`}>
                     {feature.icon}
@@ -158,37 +159,14 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-4xl font-bold mb-12 animate-fade-in">Our Achievements</h3>
-            <div className="grid md:grid-cols-4 gap-8">
-              {[
-                { number: "500+", label: "Students Taught", icon: <Users className="w-8 h-8" /> },
-                { number: "95%", label: "Success Rate", icon: <Star className="w-8 h-8" /> },
-                { number: "10+", label: "Years Experience", icon: <Award className="w-8 h-8" /> },
-                { number: "8+", label: "Expert Teachers", icon: <GraduationCap className="w-8 h-8" /> }
-              ].map((stat, index) => (
-                <div key={index} className="text-center animate-bounce-in hover-scale" style={{ animationDelay: `${index * 100}ms` }}>
-                  <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm animate-pulse-glow">
-                    {stat.icon}
-                  </div>
-                  <div className="text-4xl font-bold mb-2">{stat.number}</div>
-                  <div className="text-lg opacity-90">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Animated Stats Section */}
+      <AnimatedStats />
 
       {/* Location Section */}
-      <section className="py-20 bg-gradient-to-br from-white via-emerald-50 to-teal-50">
+      <section className="py-16 bg-gradient-to-br from-white via-emerald-50 to-teal-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4">
+          <div className="text-center mb-12 animate-fade-in">
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4">
               Visit Our Location
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full"></div>
@@ -197,16 +175,16 @@ const Home = () => {
           <div className="max-w-4xl mx-auto">
             <Card className="card-modern animate-scale-in">
               <CardContent className="p-0">
-                <div className="p-8 text-center">
+                <div className="p-6 text-center">
                   <div className="flex items-center justify-center mb-6">
                     <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center mr-4 shadow-lg animate-pulse-glow">
                       <MapPin className="text-white" size={24} />
                     </div>
-                    <span className="text-2xl font-semibold text-gray-800">Rajabazar (Near Danish Restaurant)</span>
+                    <span className="text-xl font-semibold text-gray-800">Rajabazar (Near Danish Restaurant)</span>
                   </div>
                 </div>
                 
-                <div className="w-full h-80 relative overflow-hidden">
+                <div className="w-full h-64 relative overflow-hidden">
                   <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.0123456789!2d88.3639!3d22.5726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDM0JzIxLjQiTiA4OMKwMjEnNTAuMCJF!5e0!3m2!1sen!2sin!4v1640000000000!5m2!1sen!2sin"
                     width="100%" 
@@ -219,7 +197,7 @@ const Home = () => {
                   ></iframe>
                 </div>
                 
-                <div className="p-8 text-center">
+                <div className="p-6 text-center">
                   <a 
                     href="https://maps.app.goo.gl/eepnR5hKncrbXDkz5?g_st=a" 
                     target="_blank" 

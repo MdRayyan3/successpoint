@@ -20,12 +20,12 @@ const Header = () => {
   return (
     <header className="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-100">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-300 shadow-lg">
-              <span className="text-white font-bold text-lg">SP</span>
+            <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-300 shadow-lg">
+              <span className="text-white font-bold text-sm">SP</span>
             </div>
-            <div className="text-2xl font-bold bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
+            <div className="text-xl font-bold bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
               SUCCESS POINT
             </div>
           </Link>
@@ -72,7 +72,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         <div className={`md:hidden overflow-hidden transition-all duration-300 ${
-          isMenuOpen ? 'max-h-96 pb-4' : 'max-h-0'
+          isMenuOpen ? 'max-h-80 pb-4' : 'max-h-0'
         }`}>
           <div className="space-y-2 pt-4">
             {navItems.map((item, index) => (

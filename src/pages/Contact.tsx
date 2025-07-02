@@ -1,4 +1,5 @@
-import { Phone, Mail, MapPin, MessageCircle, Clock, Users, GraduationCap } from 'lucide-react';
+
+import { Phone, Mail, MapPin, Clock, Users, GraduationCap } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
@@ -6,7 +7,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 via-cyan-50 to-emerald-50">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 overflow-hidden">
+      <section className="relative py-16 bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="absolute inset-0 animate-gradient bg-gradient-to-r from-violet-500/20 to-fuchsia-500/20"></div>
         
@@ -17,40 +18,30 @@ const Contact = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center text-white animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-scale-in">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-scale-in">
               Get In <span className="text-yellow-300 animate-shimmer">Touch</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 animate-slide-in-right opacity-90">
+            <p className="text-lg md:text-xl mb-8 animate-slide-in-right opacity-90">
               Ready to start your success journey? We're here to help!
             </p>
-            <div className="flex flex-wrap justify-center gap-4 animate-bounce-in">
-              <Button className="btn-modern bg-white text-violet-600 hover:bg-gray-100">
-                <MessageCircle className="mr-2" size={20} />
-                Chat with Us
-              </Button>
-              <Button className="btn-modern bg-transparent border-2 border-white text-white hover:bg-white hover:text-violet-600">
-                <Phone className="mr-2" size={20} />
-                Call Now
-              </Button>
-            </div>
           </div>
         </div>
       </section>
 
-      <div className="container mx-auto px-4 -mt-16 relative z-20">
+      <div className="container mx-auto px-4 -mt-12 relative z-20">
         {/* Teacher Contact Highlight */}
-        <div className="mb-16 animate-fade-in">
+        <div className="mb-12 animate-fade-in">
           <Card className="card-modern bg-gradient-to-r from-cyan-50 via-violet-50 to-fuchsia-50 hover:shadow-3xl">
             <CardHeader className="text-center pb-4">
-              <CardTitle className="text-3xl md:text-4xl text-gray-800 font-bold">
+              <CardTitle className="text-2xl md:text-3xl text-gray-800 font-bold">
                 Meet Our <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">Head Teacher</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-col lg:flex-row items-center gap-8 p-6">
+              <div className="flex flex-col lg:flex-row items-center gap-6 p-4">
                 <div className="relative group">
                   <div className="absolute -inset-4 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300 animate-pulse-glow"></div>
-                  <div className="relative w-40 h-40 rounded-full overflow-hidden shadow-2xl group-hover:scale-110 transform transition-all duration-500">
+                  <div className="relative w-32 h-32 rounded-full overflow-hidden shadow-2xl group-hover:scale-110 transform transition-all duration-500">
                     <img 
                       src="/lovable-uploads/e23f35c3-881c-4a15-ad66-590640806b5a.png" 
                       alt="Md. Khurshid Alam Sir" 
@@ -59,9 +50,9 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="flex-1 text-center lg:text-left">
-                  <h3 className="text-3xl font-bold text-gray-800 mb-2">Md. Khurshid Alam Sir</h3>
-                  <p className="text-violet-600 font-semibold text-lg mb-4">Head Teacher & Director</p>
-                  <p className="text-gray-600 mb-6 text-lg leading-relaxed">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Md. Khurshid Alam Sir</h3>
+                  <p className="text-violet-600 font-semibold mb-4">Head Teacher & Director</p>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
                     Leading Success Point with excellence and dedication. 
                     Get personalized guidance for your academic journey and career goals.
                   </p>
@@ -71,7 +62,7 @@ const Contact = () => {
                       Call: 9163924237
                     </Button>
                     <Button className="btn-modern bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:from-emerald-600 hover:to-teal-700">
-                      <MessageCircle size={16} className="mr-2" />
+                      <Phone size={16} className="mr-2" />
                       WhatsApp
                     </Button>
                   </div>
@@ -82,27 +73,27 @@ const Contact = () => {
         </div>
 
         {/* Contact Methods Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
           <Card className="card-modern group bg-gradient-to-br from-cyan-50 to-blue-50 animate-fade-in">
             <CardHeader className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transform transition-all duration-300 animate-pulse-glow">
-                <Phone className="text-white" size={24} />
+              <div className="w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transform transition-all duration-300 animate-pulse-glow">
+                <Phone className="text-white" size={20} />
               </div>
-              <CardTitle className="text-cyan-600 text-xl">Phone Support</CardTitle>
+              <CardTitle className="text-cyan-600 text-lg">Phone Support</CardTitle>
             </CardHeader>
-            <CardContent className="text-center space-y-4">
+            <CardContent className="text-center space-y-3">
               <div className="space-y-2">
                 <a href="tel:9163924237" className="text-lg text-gray-700 hover:text-cyan-600 transition-colors duration-300 block font-semibold hover-scale flex items-center justify-center">
-                  <Phone size={18} className="mr-2" />
+                  <Phone size={16} className="mr-2" />
                   9163924237
                 </a>
                 <a href="tel:7003837463" className="text-lg text-gray-700 hover:text-cyan-600 transition-colors duration-300 block font-semibold hover-scale flex items-center justify-center">
-                  <Phone size={18} className="mr-2" />
+                  <Phone size={16} className="mr-2" />
                   7003837463
                 </a>
               </div>
               <div className="flex items-center justify-center text-sm text-gray-600 mt-4">
-                <Clock size={16} className="mr-2" />
+                <Clock size={14} className="mr-2" />
                 Available during office hours
               </div>
             </CardContent>
@@ -110,24 +101,24 @@ const Contact = () => {
 
           <Card className="card-modern group bg-gradient-to-br from-violet-50 to-purple-50 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <CardHeader className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transform transition-all duration-300 animate-pulse-glow">
-                <Mail className="text-white" size={24} />
+              <div className="w-14 h-14 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transform transition-all duration-300 animate-pulse-glow">
+                <Mail className="text-white" size={20} />
               </div>
-              <CardTitle className="text-violet-600 text-xl">Email & Chat</CardTitle>
+              <CardTitle className="text-violet-600 text-lg">Email & Chat</CardTitle>
             </CardHeader>
-            <CardContent className="text-center space-y-4">
+            <CardContent className="text-center space-y-3">
               <div className="space-y-2">
                 <a href="mailto:rayyanmd130@gmail.com" className="text-lg text-gray-700 hover:text-violet-600 transition-colors duration-300 block font-semibold hover-scale flex items-center justify-center">
-                  <Mail size={18} className="mr-2" />
+                  <Mail size={16} className="mr-2" />
                   rayyanmd130@gmail.com
                 </a>
                 <a href="https://wa.me/919163924237" className="text-lg text-gray-700 hover:text-emerald-600 transition-colors duration-300 block font-semibold hover-scale flex items-center justify-center">
-                  <MessageCircle size={18} className="mr-2" />
+                  <Phone size={16} className="mr-2" />
                   WhatsApp Chat
                 </a>
               </div>
               <div className="flex items-center justify-center text-sm text-gray-600 mt-4">
-                <MessageCircle size={16} className="mr-2" />
+                <Phone size={14} className="mr-2" />
                 Quick response guaranteed
               </div>
             </CardContent>
@@ -135,21 +126,21 @@ const Contact = () => {
 
           <Card className="card-modern group bg-gradient-to-br from-emerald-50 to-teal-50 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <CardHeader className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transform transition-all duration-300 animate-pulse-glow">
-                <MapPin className="text-white" size={24} />
+              <div className="w-14 h-14 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transform transition-all duration-300 animate-pulse-glow">
+                <MapPin className="text-white" size={20} />
               </div>
-              <CardTitle className="text-emerald-600 text-xl">Visit Us</CardTitle>
+              <CardTitle className="text-emerald-600 text-lg">Visit Us</CardTitle>
             </CardHeader>
-            <CardContent className="text-center space-y-4">
+            <CardContent className="text-center space-y-3">
               <div>
                 <p className="text-lg font-semibold text-gray-800 mb-2 flex items-center justify-center">
-                  <MapPin size={18} className="mr-2" />
+                  <MapPin size={16} className="mr-2" />
                   Our Location
                 </p>
                 <p className="text-gray-600">Rajabazar (Near Danish Restaurant)</p>
               </div>
               <div className="flex items-center justify-center text-sm text-gray-600 mt-4">
-                <Users size={16} className="mr-2" />
+                <Users size={14} className="mr-2" />
                 Walk-ins welcome
               </div>
             </CardContent>
@@ -157,17 +148,17 @@ const Contact = () => {
         </div>
 
         {/* Interactive Map Section */}
-        <Card className="card-modern mb-16 animate-fade-in">
-          <CardHeader className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-center py-8">
-            <CardTitle className="text-3xl font-bold flex items-center justify-center">
-              <MapPin className="mr-3" size={32} />
+        <Card className="card-modern mb-12 animate-fade-in">
+          <CardHeader className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-center py-6">
+            <CardTitle className="text-2xl font-bold flex items-center justify-center">
+              <MapPin className="mr-3" size={28} />
               Find Us Here
             </CardTitle>
             <p className="text-emerald-100 mt-2">Located in the heart of Rajabazar for easy access</p>
           </CardHeader>
           <CardContent className="p-0">
             <div className="relative">
-              <div className="w-full h-80 md:h-96 rounded-b-lg overflow-hidden">
+              <div className="w-full h-64 md:h-80 rounded-b-lg overflow-hidden">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.0123456789!2d88.3639!3d22.5726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDM0JzIxLjQiTiA4OMKwMjEnNTAuMCJF!5e0!3m2!1sen!2sin!4v1640000000000!5m2!1sen!2sin"
                   width="100%" 
@@ -190,19 +181,15 @@ const Contact = () => {
         </Card>
 
         {/* Call-to-Action Section */}
-        <div className="text-center mb-16 animate-bounce-in">
+        <div className="text-center mb-12 animate-bounce-in">
           <Card className="card-modern bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 text-white">
-            <CardContent className="p-12">
-              <h3 className="text-4xl font-bold mb-6 gradient-text-rainbow">Ready to Start Your Success Journey?</h3>
-              <p className="text-xl mb-8 opacity-90">Join thousands of successful students at Success Point Coaching Centre</p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <CardContent className="p-8">
+              <h3 className="text-3xl font-bold mb-6 gradient-text-rainbow">Ready to Start Your Success Journey?</h3>
+              <p className="text-lg mb-6 opacity-90">Join thousands of successful students at Success Point Coaching Centre</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button className="btn-modern bg-white text-violet-600 hover:bg-gray-100 flex items-center justify-center">
                   <GraduationCap size={16} className="mr-2" />
                   Apply for Admission
-                </Button>
-                <Button className="btn-modern bg-transparent border-2 border-white text-white hover:bg-white hover:text-violet-600">
-                  <MessageCircle size={16} className="mr-2" />
-                  Chat on WhatsApp
                 </Button>
                 <Button className="btn-modern bg-transparent border-2 border-white text-white hover:bg-white hover:text-violet-600">
                   <Users size={16} className="mr-2" />
