@@ -1,9 +1,86 @@
-
 import { Phone, Mail, MapPin, GraduationCap, BookOpen, Award } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import AnimatedStats from '@/components/AnimatedStats';
+import { useEffect, useState } from 'react';
 
 const Home = () => {
+  const [counts, setCounts] = useState<number[]>([0, 0, 0]);
+
+  const featuresWithStats = [
+    {
+      icon: <GraduationCap className="w-8 h-8" />,
+      title: "Expert Teachers",
+      description: "Best and experienced teachers available for each subject with personalized attention.",
+      gradient: "from-cyan-500 to-blue-600",
+      bgGradient: "from-cyan-50 to-blue-50",
+      count: 8,
+      suffix: "+"
+    },
+    {
+      icon: <BookOpen className="w-8 h-8" />,
+      title: "Digital Classes",
+      description: "Fully digital classes with offline, online, and recorded options for flexible learning.",
+      gradient: "from-emerald-500 to-teal-600",
+      bgGradient: "from-emerald-50 to-teal-50",
+      count: 500,
+      suffix: "+"
+    },
+    {
+      icon: <Award className="w-8 h-8" />,
+      title: "Success Rate",
+      description: "Complete coverage of Class 11th, 12th, and B.Com syllabus with regular assessments.",
+      gradient: "from-violet-500 to-purple-600",
+      bgGradient: "from-violet-50 to-purple-50",
+      count: 95,
+      suffix: "%"
+    }
+  ];
+
+  useEffect(() => {
+    const animateCounters = () => {
+      featuresWithStats.forEach((feature, index) => {
+        let start = 0;
+        const end = feature.count;
+        const duration = 2000;
+        const increment = end / (duration / 16);
+
+        const timer = setInterval(() => {
+          start += increment;
+          if (start >= end) {
+            setCounts(prev => {
+              const newCounts = [...prev];
+              newCounts[index] = end;
+              return newCounts;
+            });
+            clearInterval(timer);
+          } else {
+            setCounts(prev => {
+              const newCounts = [...prev];
+              newCounts[index] = Math.floor(start);
+              return newCounts;
+            });
+          }
+        }, 16);
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          animateCounters();
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    const element = document.getElementById('features-section');
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen overflow-hidden">
       {/* Hero Section */}
@@ -102,8 +179,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 relative">
+      {/* Features Section with Count-up */}
+      <section id="features-section" className="py-16 bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent mb-4">
@@ -113,29 +190,7 @@ const Home = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                icon: <GraduationCap className="w-8 h-8" />,
-                title: "Expert Teachers",
-                description: "Best and experienced teachers available for each subject with personalized attention.",
-                gradient: "from-cyan-500 to-blue-600",
-                bgGradient: "from-cyan-50 to-blue-50"
-              },
-              {
-                icon: <BookOpen className="w-8 h-8" />,
-                title: "Digital Classes",
-                description: "Fully digital classes with offline, online, and recorded options for flexible learning.",
-                gradient: "from-emerald-500 to-teal-600",
-                bgGradient: "from-emerald-50 to-teal-50"
-              },
-              {
-                icon: <Award className="w-8 h-8" />,
-                title: "Comprehensive Curriculum",
-                description: "Complete coverage of Class 11th, 12th, and B.Com syllabus with regular assessments.",
-                gradient: "from-violet-500 to-purple-600",
-                bgGradient: "from-violet-50 to-purple-50"
-              }
-            ].map((feature, index) => (
+            {featuresWithStats.map((feature, index) => (
               <Card 
                 key={index}
                 className={`card-modern group bg-gradient-to-br ${feature.bgGradient} animate-scale-in`}
@@ -145,6 +200,9 @@ const Home = () => {
                   <div className={`absolute inset-0 bg-gradient-to-r ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
                   <div className={`w-16 h-16 bg-gradient-to-r ${feature.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-300 group-hover:rotate-3 animate-pulse-glow`}>
                     {feature.icon}
+                  </div>
+                  <div className="text-3xl font-bold text-gray-800 mb-2">
+                    {counts[index]}{feature.suffix}
                   </div>
                   <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-gray-900">
                     {feature.title}
@@ -158,9 +216,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Animated Stats Section */}
-      <AnimatedStats />
 
       {/* Location Section */}
       <section className="py-16 bg-gradient-to-br from-white via-emerald-50 to-teal-50">
