@@ -160,7 +160,7 @@ const Contact = () => {
             <div className="relative">
               <div className="w-full h-64 md:h-80 rounded-b-lg overflow-hidden">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.0123456789!2d88.3639!3d22.5726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDM0JzIxLjQiTiA4OMKwMjEnNTAuMCJF!5e0!3m2!1sen!2sin!4v1640000000000!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.791!2d88.3646!3d22.5726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277b4c1b2e3e7%3A0x9c5d5e6f4a3b2c1d!2sRajabazar%2C%20Kolkata%2C%20West%20Bengal%20700054%2C%20India!5e0!3m2!1sen!2sin!4v1640000000000!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 

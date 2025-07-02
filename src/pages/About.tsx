@@ -1,5 +1,60 @@
 
+import { useEffect, useState } from 'react';
+
 const About = () => {
+  const [counts, setCounts] = useState<number[]>([0, 0, 0]);
+  const statsData = [
+    { number: 500, label: "Students Taught", suffix: "+" },
+    { number: 95, label: "Success Rate", suffix: "%" },
+    { number: 10, label: "Years Experience", suffix: "+" }
+  ];
+
+  useEffect(() => {
+    const animateCounters = () => {
+      statsData.forEach((stat, index) => {
+        let start = 0;
+        const end = stat.number;
+        const duration = 2000;
+        const increment = end / (duration / 16);
+
+        const timer = setInterval(() => {
+          start += increment;
+          if (start >= end) {
+            setCounts(prev => {
+              const newCounts = [...prev];
+              newCounts[index] = end;
+              return newCounts;
+            });
+            clearInterval(timer);
+          } else {
+            setCounts(prev => {
+              const newCounts = [...prev];
+              newCounts[index] = Math.floor(start);
+              return newCounts;
+            });
+          }
+        }, 16);
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          animateCounters();
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    const element = document.getElementById('stats-section');
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen py-16 bg-gradient-to-br from-violet-50 via-cyan-50 to-emerald-50">
       <div className="container mx-auto px-4">
@@ -85,7 +140,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="card-modern bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 text-white p-10 text-center animate-fade-in">
+          <div id="stats-section" className="card-modern bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 text-white p-10 text-center animate-fade-in">
             <h3 className="text-3xl font-bold mb-6">Why Students Choose Us</h3>
             <p className="text-lg leading-relaxed max-w-4xl mx-auto mb-8">
               At Success Point, we don't just teach subjects - we build futures. Our comprehensive approach to education, 
@@ -93,13 +148,11 @@ const About = () => {
               ensures that every student receives the best possible preparation for their academic journey.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                { number: "500+", label: "Students Taught" },
-                { number: "95%", label: "Success Rate" },
-                { number: "10+", label: "Years Experience" }
-              ].map((stat, index) => (
+              {statsData.map((stat, index) => (
                 <div key={index} className="text-center hover-scale">
-                  <div className="text-4xl font-bold mb-2 gradient-text-rainbow">{stat.number}</div>
+                  <div className="text-4xl font-bold mb-2 gradient-text-rainbow">
+                    {counts[index]}{stat.suffix}
+                  </div>
                   <div className="text-lg opacity-90">{stat.label}</div>
                 </div>
               ))}

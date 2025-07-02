@@ -1,8 +1,62 @@
 
 import { GraduationCap, BookOpen, Star, Award } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useEffect, useState } from 'react';
 
 const OurFaculty = () => {
+  const [counts, setCounts] = useState<number[]>([0, 0, 0]);
+  const statsData = [
+    { number: 8, label: "Expert Teachers", suffix: "+" },
+    { number: 15, label: "Subjects Covered", suffix: "+" },
+    { number: 100, label: "Dedicated Support", suffix: "%" }
+  ];
+
+  useEffect(() => {
+    const animateCounters = () => {
+      statsData.forEach((stat, index) => {
+        let start = 0;
+        const end = stat.number;
+        const duration = 2000;
+        const increment = end / (duration / 16);
+
+        const timer = setInterval(() => {
+          start += increment;
+          if (start >= end) {
+            setCounts(prev => {
+              const newCounts = [...prev];
+              newCounts[index] = end;
+              return newCounts;
+            });
+            clearInterval(timer);
+          } else {
+            setCounts(prev => {
+              const newCounts = [...prev];
+              newCounts[index] = Math.floor(start);
+              return newCounts;
+            });
+          }
+        }, 16);
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          animateCounters();
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    const element = document.getElementById('faculty-stats-section');
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const faculty = [
     {
       name: "Md. Khurshid Alam",
@@ -119,7 +173,7 @@ const OurFaculty = () => {
 
           {/* Bottom Section */}
           <div className="mt-20 text-center animate-fade-in">
-            <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white p-10 rounded-3xl shadow-2xl">
+            <div id="faculty-stats-section" className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white p-10 rounded-3xl shadow-2xl">
               <h3 className="text-3xl font-bold mb-4">Excellence in Education</h3>
               <p className="text-lg leading-relaxed max-w-4xl mx-auto">
                 Our faculty members bring years of experience and expertise to provide the best possible education. 
@@ -127,18 +181,14 @@ const OurFaculty = () => {
                 the guidance they need to excel in their academic journey.
               </p>
               <div className="mt-8 flex justify-center space-x-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold">8+</div>
-                  <div className="text-sm opacity-90">Expert Teachers</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold">15+</div>
-                  <div className="text-sm opacity-90">Subjects Covered</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold">100%</div>
-                  <div className="text-sm opacity-90">Dedicated Support</div>
-                </div>
+                {statsData.map((stat, index) => (
+                  <div key={index} className="text-center">
+                    <div className="text-3xl font-bold">
+                      {counts[index]}{stat.suffix}
+                    </div>
+                    <div className="text-sm opacity-90">{stat.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
