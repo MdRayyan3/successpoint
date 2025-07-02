@@ -306,7 +306,7 @@
 
 @media (hover: none) and (pointer: coarse) {
   .btn-modern:active {
-    @apply scale-102 shadow-md;
+    @apply scale-105 shadow-md;
   }
 }
 
@@ -385,4 +385,3 @@
     min-width: 44px;
   }
 }
-
