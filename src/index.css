@@ -1,4 +1,5 @@
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -295,7 +296,7 @@
 
 /* Modern Button Styles */
 .btn-modern {
-  @apply relative overflow-hidden px-6 py-3 rounded-xl font-semibold shadow-md transition-all duration-250 transform;
+  @apply relative overflow-hidden px-6 py-3 rounded-xl font-semibold shadow-md transition-all duration-300 transform;
   will-change: transform;
 }
 
@@ -384,3 +385,4 @@
     min-width: 44px;
   }
 }
+
