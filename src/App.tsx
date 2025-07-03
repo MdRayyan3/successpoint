@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import LinkedInBadge from "./components/LinkedInBadge";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import OurFaculty from "./pages/OurFaculty";
@@ -35,6 +36,7 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
+          <LinkedInBadge />
           <Footer />
         </div>
       </BrowserRouter>

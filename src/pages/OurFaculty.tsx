@@ -60,6 +60,7 @@ const OurFaculty = () => {
   const faculty = [
     {
       name: "Md. Khurshid Alam",
+      photo: "/lovable-uploads/ec45bc48-ea7d-4275-bc70-2a7eb674d3f2.png",
       subjects: ["Account", "Taxation", "Financial Management", "Economics", "Corporate Law"],
       icon: <GraduationCap className="w-8 h-8" />,
       color: "from-blue-500 to-purple-600",
@@ -67,6 +68,7 @@ const OurFaculty = () => {
     },
     {
       name: "Saquib Iqbal",
+      photo: "/lovable-uploads/a56124d6-fc87-47b1-8cc5-e0606a694dbe.png",
       subjects: ["Cost and Management Account", "Business Mathematics and Statistics"],
       icon: <BookOpen className="w-8 h-8" />,
       color: "from-green-500 to-teal-600",
@@ -74,6 +76,7 @@ const OurFaculty = () => {
     },
     {
       name: "Irfan Khan",
+      photo: "/lovable-uploads/ac4f9945-66f2-4941-a820-6f10f287ae2d.png",
       subjects: ["PPM", "Commercial Law", "Computerised Accounting", "E filing", "E commerce", "Business Communication"],
       icon: <Award className="w-8 h-8" />,
       color: "from-orange-500 to-red-600",
@@ -81,6 +84,7 @@ const OurFaculty = () => {
     },
     {
       name: "Abu Bakar",
+      photo: "/lovable-uploads/5934fa9b-0bdd-4db9-b127-63647b186662.png",
       subjects: ["Economics", "Commerce", "Sales Management", "Human Resources Management", "Marketing Management"],
       icon: <Star className="w-8 h-8" />,
       color: "from-indigo-500 to-blue-600",
@@ -88,6 +92,7 @@ const OurFaculty = () => {
     },
     {
       name: "Shahbaz Alam",
+      photo: "/lovable-uploads/d4e8327f-e672-4b59-b9d8-952e52b2fe41.png",
       subjects: ["Business Studies", "Entrepreneurship Development", "Constitutional Value"],
       icon: <GraduationCap className="w-8 h-8" />,
       color: "from-purple-500 to-pink-600",
@@ -142,11 +147,21 @@ const OurFaculty = () => {
               >
                 <CardHeader className="relative">
                   <div className={`absolute inset-0 bg-gradient-to-r ${teacher.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                  <div className="relative z-10 flex items-center space-x-4">
-                    <div className={`p-3 rounded-full bg-gradient-to-r ${teacher.color} text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      {teacher.icon}
-                    </div>
-                    <div>
+                  <div className="relative z-10 flex flex-col items-center space-y-4">
+                    {teacher.photo ? (
+                      <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <img 
+                          src={teacher.photo} 
+                          alt={teacher.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <div className={`p-3 rounded-full bg-gradient-to-r ${teacher.color} text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                        {teacher.icon}
+                      </div>
+                    )}
+                    <div className="text-center">
                       <CardTitle className="text-xl font-bold text-gray-800 group-hover:text-gray-900">
                         {teacher.name}
                       </CardTitle>
