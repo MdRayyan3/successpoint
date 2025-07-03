@@ -6,8 +6,8 @@ const LinkedInBadge = () => {
   return (
     <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-16">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12 hover-lift animate-fade-in border border-white/20">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12 border border-white/20">
             
             {/* Header */}
             <div className="text-center mb-8">
@@ -22,13 +22,13 @@ const LinkedInBadge = () => {
             </div>
 
             {/* Main Content */}
-            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
               
               {/* Developer Profile */}
               <div className="text-center md:text-left space-y-6">
                 
                 {/* Profile Card */}
-                <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-6 text-white shadow-lg hover-scale">
+                <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-6 text-white shadow-lg">
                   <div className="flex items-center justify-center md:justify-start space-x-4 mb-4">
                     <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
                       <User className="w-8 h-8" />
@@ -39,7 +39,7 @@ const LinkedInBadge = () => {
                     </div>
                   </div>
                   
-                  <div className="space-y-2 text-sm text-blue-100">
+                  <div className="space-y-2 text-sm text-blue-100 mb-4">
                     <p>• Web Developer | HTML | CSS | JavaScript | SQL</p>
                     <p>• Python | C++ Developer</p>
                     <p>• Scaler School of Technology</p>
@@ -50,7 +50,7 @@ const LinkedInBadge = () => {
                     href="https://in.linkedin.com/in/-%7Emdrayyan5363?trk=profile-badge"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 mt-4 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition-all duration-300 backdrop-blur-sm border border-white/20"
+                    className="inline-flex items-center space-x-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition-all duration-300 backdrop-blur-sm border border-white/20"
                   >
                     <span className="text-sm font-medium">View LinkedIn Profile</span>
                     <ExternalLink className="w-4 h-4" />
@@ -78,8 +78,7 @@ const LinkedInBadge = () => {
                     {['React', 'TypeScript', 'Tailwind CSS', 'Modern UI/UX'].map((tech, index) => (
                       <span 
                         key={index}
-                        className="px-3 py-1 text-xs font-medium rounded-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 animate-bounce-in"
-                        style={{ animationDelay: `${index * 100 + 300}ms` }}
+                        className="px-3 py-1 text-xs font-medium rounded-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white shadow-sm"
                       >
                         {tech}
                       </span>
