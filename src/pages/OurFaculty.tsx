@@ -142,27 +142,37 @@ const OurFaculty = () => {
             {faculty.map((teacher, index) => (
               <Card 
                 key={index}
-                className={`group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 bg-gradient-to-br ${teacher.bgColor} border-0 overflow-hidden animate-scale-in`}
+                className={`group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 bg-gradient-to-br ${teacher.bgColor} border-0 overflow-hidden animate-scale-in hover-lift`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardHeader className="relative">
                   <div className={`absolute inset-0 bg-gradient-to-r ${teacher.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
                   <div className="relative z-10 flex flex-col items-center space-y-4">
                     {teacher.photo ? (
-                      <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg group-hover:scale-110 transition-transform duration-300">
-                        <img 
-                          src={teacher.photo} 
-                          alt={teacher.name}
-                          className="w-full h-full object-cover"
-                        />
+                      <div className="relative">
+                        <div className={`absolute inset-0 bg-gradient-to-r ${teacher.color} rounded-full opacity-20 animate-pulse-glow`}></div>
+                        <div className="relative w-32 h-32 rounded-full overflow-hidden shadow-2xl group-hover:scale-110 transition-all duration-500 border-4 border-white/50 backdrop-blur-sm">
+                          <img 
+                            src={teacher.photo} 
+                            alt={teacher.name}
+                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                          />
+                          <div className={`absolute inset-0 bg-gradient-to-t ${teacher.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
+                        </div>
+                        <div className={`absolute -bottom-2 -right-2 p-2 rounded-full bg-gradient-to-r ${teacher.color} text-white shadow-lg animate-bounce-in`} style={{ animationDelay: `${index * 150 + 300}ms` }}>
+                          {teacher.icon}
+                        </div>
                       </div>
                     ) : (
-                      <div className={`p-3 rounded-full bg-gradient-to-r ${teacher.color} text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                        {teacher.icon}
+                      <div className="relative">
+                        <div className={`absolute inset-0 bg-gradient-to-r ${teacher.color} rounded-full opacity-20 animate-pulse-glow`}></div>
+                        <div className={`relative w-32 h-32 rounded-full bg-gradient-to-r ${teacher.color} text-white shadow-2xl group-hover:scale-110 transition-all duration-500 flex items-center justify-center border-4 border-white/50`}>
+                          <div className="text-4xl">{teacher.icon}</div>
+                        </div>
                       </div>
                     )}
                     <div className="text-center">
-                      <CardTitle className="text-xl font-bold text-gray-800 group-hover:text-gray-900">
+                      <CardTitle className="text-xl font-bold text-gray-800 group-hover:text-gray-900 animate-slide-in-right" style={{ animationDelay: `${index * 100 + 200}ms` }}>
                         {teacher.name}
                       </CardTitle>
                       <p className="text-sm text-gray-500 font-medium">Faculty Member</p>
@@ -175,7 +185,8 @@ const OurFaculty = () => {
                     {teacher.subjects.map((subject, subIndex) => (
                       <span
                         key={subIndex}
-                        className={`px-3 py-1 text-sm rounded-full bg-gradient-to-r ${teacher.color} text-white shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105`}
+                        className={`px-3 py-1 text-sm rounded-full bg-gradient-to-r ${teacher.color} text-white shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 animate-fade-in hover-scale`}
+                        style={{ animationDelay: `${index * 100 + subIndex * 50 + 400}ms` }}
                       >
                         {subject}
                       </span>
@@ -188,7 +199,7 @@ const OurFaculty = () => {
 
           {/* Bottom Section */}
           <div className="mt-20 text-center animate-fade-in">
-            <div id="faculty-stats-section" className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white p-10 rounded-3xl shadow-2xl">
+            <div id="faculty-stats-section" className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white p-10 rounded-3xl shadow-2xl hover-glow">
               <h3 className="text-3xl font-bold mb-4">Excellence in Education</h3>
               <p className="text-lg leading-relaxed max-w-4xl mx-auto">
                 Our faculty members bring years of experience and expertise to provide the best possible education. 
@@ -197,7 +208,7 @@ const OurFaculty = () => {
               </p>
               <div className="mt-8 flex justify-center space-x-8">
                 {statsData.map((stat, index) => (
-                  <div key={index} className="text-center">
+                  <div key={index} className="text-center animate-bounce-in" style={{ animationDelay: `${index * 200}ms` }}>
                     <div className="text-3xl font-bold">
                       {counts[index]}{stat.suffix}
                     </div>
