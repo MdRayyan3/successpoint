@@ -88,7 +88,8 @@ const OurFaculty = () => {
       subjects: ["Economics", "Commerce", "Sales Management", "Human Resources Management", "Marketing Management"],
       icon: <Star className="w-8 h-8" />,
       color: "from-indigo-500 to-blue-600",
-      bgColor: "from-indigo-50 to-blue-50"
+      bgColor: "from-indigo-50 to-blue-50",
+      imagePosition: "object-top" // Better positioning for this photo
     },
     {
       name: "Shahbaz Alam",
@@ -96,7 +97,8 @@ const OurFaculty = () => {
       subjects: ["Business Studies", "Entrepreneurship Development", "Constitutional Value"],
       icon: <GraduationCap className="w-8 h-8" />,
       color: "from-purple-500 to-pink-600",
-      bgColor: "from-purple-50 to-pink-50"
+      bgColor: "from-purple-50 to-pink-50",
+      imagePosition: "object-top" // Better positioning for this photo
     },
     {
       name: "Tahreem Fatma",
@@ -151,23 +153,28 @@ const OurFaculty = () => {
                     {teacher.photo ? (
                       <div className="relative">
                         <div className={`absolute inset-0 bg-gradient-to-r ${teacher.color} rounded-full opacity-20 animate-pulse-glow`}></div>
-                        <div className="relative w-32 h-32 rounded-full overflow-hidden shadow-2xl group-hover:scale-110 transition-all duration-500 border-4 border-white/50 backdrop-blur-sm">
+                        <div className="relative w-40 h-40 rounded-full overflow-hidden shadow-2xl group-hover:scale-110 transition-all duration-500 border-4 border-white/50 backdrop-blur-sm">
                           <img 
                             src={teacher.photo} 
                             alt={teacher.name}
-                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            className={`w-full h-full ${teacher.imagePosition || 'object-cover object-center'} transform group-hover:scale-105 transition-transform duration-500 brightness-105 contrast-105`}
+                            style={{
+                              filter: 'brightness(1.05) contrast(1.1) saturate(1.1)',
+                            }}
                           />
-                          <div className={`absolute inset-0 bg-gradient-to-t ${teacher.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
+                          <div className={`absolute inset-0 bg-gradient-to-t ${teacher.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                          {/* Enhanced overlay for better face visibility */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white/5"></div>
                         </div>
-                        <div className={`absolute -bottom-2 -right-2 p-2 rounded-full bg-gradient-to-r ${teacher.color} text-white shadow-lg animate-bounce-in`} style={{ animationDelay: `${index * 150 + 300}ms` }}>
+                        <div className={`absolute -bottom-3 -right-3 p-3 rounded-full bg-gradient-to-r ${teacher.color} text-white shadow-xl animate-bounce-in border-3 border-white/30`} style={{ animationDelay: `${index * 150 + 300}ms` }}>
                           {teacher.icon}
                         </div>
                       </div>
                     ) : (
                       <div className="relative">
                         <div className={`absolute inset-0 bg-gradient-to-r ${teacher.color} rounded-full opacity-20 animate-pulse-glow`}></div>
-                        <div className={`relative w-32 h-32 rounded-full bg-gradient-to-r ${teacher.color} text-white shadow-2xl group-hover:scale-110 transition-all duration-500 flex items-center justify-center border-4 border-white/50`}>
-                          <div className="text-4xl">{teacher.icon}</div>
+                        <div className={`relative w-40 h-40 rounded-full bg-gradient-to-r ${teacher.color} text-white shadow-2xl group-hover:scale-110 transition-all duration-500 flex items-center justify-center border-4 border-white/50`}>
+                          <div className="text-5xl">{teacher.icon}</div>
                         </div>
                       </div>
                     )}
