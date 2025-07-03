@@ -30,8 +30,12 @@ const LinkedInBadge = () => {
                 {/* Profile Card */}
                 <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-6 text-white shadow-lg">
                   <div className="flex items-center justify-center md:justify-start space-x-4 mb-4">
-                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                      <User className="w-8 h-8" />
+                    <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg border-2 border-white/30">
+                      <img 
+                        src="/lovable-uploads/06b2e7d6-a6e2-4df3-886a-bc9243206dbf.png" 
+                        alt="Md Rayyan"
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div>
                       <h4 className="text-2xl font-bold">Md Rayyan</h4>
@@ -45,16 +49,28 @@ const LinkedInBadge = () => {
                     <p>• Scaler School of Technology</p>
                   </div>
                   
-                  {/* LinkedIn CTA */}
-                  <a 
-                    href="https://in.linkedin.com/in/-%7Emdrayyan5363?trk=profile-badge"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition-all duration-300 backdrop-blur-sm border border-white/20"
-                  >
-                    <span className="text-sm font-medium">View LinkedIn Profile</span>
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
+                  {/* LinkedIn Badge Integration */}
+                  <div className="mt-4">
+                    <div 
+                      className="badge-base LI-profile-badge" 
+                      data-locale="en_US" 
+                      data-size="medium" 
+                      data-theme="dark" 
+                      data-type="VERTICAL" 
+                      data-vanity="-~mdrayyan5363" 
+                      data-version="v1"
+                    >
+                      <a 
+                        className="badge-base__link LI-simple-link inline-flex items-center space-x-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition-all duration-300 backdrop-blur-sm border border-white/20 text-white no-underline" 
+                        href="https://in.linkedin.com/in/-%7Emdrayyan5363?trk=profile-badge"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <span className="text-sm font-medium">View LinkedIn Profile</span>
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
               
@@ -93,7 +109,7 @@ const LinkedInBadge = () => {
                       <Palette className="w-5 h-5 text-white" />
                     </div>
                     <h6 className="font-semibold text-gray-800">Design Philosophy</h6>
-                  </div>
+                    </div>
                   <p className="text-sm text-gray-600">
                     Clean, modern, and user-focused design with attention to performance and accessibility.
                   </p>
