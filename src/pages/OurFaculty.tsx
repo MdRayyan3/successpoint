@@ -84,21 +84,21 @@ const OurFaculty = () => {
     },
     {
       name: "Abu Bakar",
-      photo: "/lovable-uploads/5934fa9b-0bdd-4db9-b127-63647b186662.png",
+      photo: "/lovable-uploads/8d137088-a954-45fc-934d-f714104fd4dd.png",
       subjects: ["Economics", "Commerce", "Sales Management", "Human Resources Management", "Marketing Management"],
       icon: <Star className="w-8 h-8" />,
       color: "from-indigo-500 to-blue-600",
       bgColor: "from-indigo-50 to-blue-50",
-      imagePosition: "object-top" // Better positioning for this photo
+      imagePosition: "object-top"
     },
     {
       name: "Shahbaz Alam",
-      photo: "/lovable-uploads/d4e8327f-e672-4b59-b9d8-952e52b2fe41.png",
+      photo: "/lovable-uploads/a64f3beb-5901-47f6-afb3-bca76bbc027f.png",
       subjects: ["Business Studies", "Entrepreneurship Development", "Constitutional Value"],
       icon: <GraduationCap className="w-8 h-8" />,
       color: "from-purple-500 to-pink-600",
       bgColor: "from-purple-50 to-pink-50",
-      imagePosition: "object-top" // Better positioning for this photo
+      imagePosition: "object-top"
     },
     {
       name: "Tahreem Fatma",
