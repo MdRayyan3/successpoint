@@ -84,7 +84,7 @@ const OurFaculty = () => {
     },
     {
       name: "Abu Bakar",
-      photo: "/lovable-uploads/8d137088-a954-45fc-934d-f714104fd4dd.png",
+      photo: "/lovable-uploads/3c5eed04-941f-40cf-ae6e-49577b02b7cb.png",
       subjects: ["Economics", "Commerce", "Sales Management", "Human Resources Management", "Marketing Management"],
       icon: <Star className="w-8 h-8" />,
       color: "from-indigo-500 to-blue-600",
@@ -93,7 +93,7 @@ const OurFaculty = () => {
     },
     {
       name: "Shahbaz Alam",
-      photo: "/lovable-uploads/a64f3beb-5901-47f6-afb3-bca76bbc027f.png",
+      photo: "/lovable-uploads/fb3fe1b0-78d8-4887-906d-94ccf4e5ef29.png",
       subjects: ["Business Studies", "Entrepreneurship Development", "Constitutional Value"],
       icon: <GraduationCap className="w-8 h-8" />,
       color: "from-purple-500 to-pink-600",
