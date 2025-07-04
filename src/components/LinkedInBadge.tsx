@@ -1,7 +1,23 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const LinkedInBadge = () => {
+  useEffect(() => {
+    // Load LinkedIn badge script
+    const script = document.createElement('script');
+    script.src = 'https://platform.linkedin.com/badges/js/profile.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
     <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-8">
       <div className="container mx-auto px-4">
@@ -18,10 +34,23 @@ const LinkedInBadge = () => {
               </p>
             </div>
 
-            {/* LinkedIn Badge - Exact code provided by user */}
+            {/* LinkedIn Badge - Exact code as provided by user */}
             <div className="mb-3">
-              <div className="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="-~mdrayyan5363" data-version="v1">
-                <a className="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/-%7Emdrayyan5363?trk=profile-badge">Md Rayyan</a>
+              <div 
+                className="badge-base LI-profile-badge" 
+                data-locale="en_US" 
+                data-size="medium" 
+                data-theme="dark" 
+                data-type="VERTICAL" 
+                data-vanity="-~mdrayyan5363" 
+                data-version="v1"
+              >
+                <a 
+                  className="badge-base__link LI-simple-link" 
+                  href="https://in.linkedin.com/in/-%7Emdrayyan5363?trk=profile-badge"
+                >
+                  Md Rayyan
+                </a>
               </div>
             </div>
             
