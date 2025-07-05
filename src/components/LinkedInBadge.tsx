@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Sparkles, Star } from 'lucide-react';
 
@@ -9,7 +8,6 @@ const LinkedInBadge = () => {
     script.src = 'https://platform.linkedin.com/badges/js/profile.js';
     script.async = true;
     script.defer = true;
-    script.loading = 'lazy';
     
     // Performance optimization - only load when component is visible
     const observer = new IntersectionObserver((entries) => {
