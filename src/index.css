@@ -1,5 +1,4 @@
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -78,6 +77,13 @@
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: none;
+    font-display: swap; /* Performance optimization */
+  }
+
+  /* Performance optimization for images */
+  img {
+    content-visibility: auto;
+    contain-intrinsic-size: 200px 200px;
   }
 }
 
@@ -106,51 +112,51 @@
   }
 }
 
-/* Enhanced Modern Animations - Performance Optimized */
+/* Performance-optimized animations using GPU acceleration */
 @keyframes fade-in {
   0% {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translate3d(0, 15px, 0);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes scale-in {
   0% {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale3d(0.95, 0.95, 1);
   }
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale3d(1, 1, 1);
   }
 }
 
 @keyframes slide-in-right {
   0% {
     opacity: 0;
-    transform: translateX(20px);
+    transform: translate3d(20px, 0, 0);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes bounce-in {
   0% {
     opacity: 0;
-    transform: scale(0.5);
+    transform: scale3d(0.5, 0.5, 1);
   }
   60% {
-    transform: scale(1.02);
+    transform: scale3d(1.02, 1.02, 1);
   }
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale3d(1, 1, 1);
   }
 }
 
@@ -165,10 +171,10 @@
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg);
   }
   50% {
-    transform: translateY(-8px) rotate(2deg);
+    transform: translate3d(0, -8px, 0) rotate(2deg);
   }
 }
 
@@ -190,60 +196,71 @@
   }
 }
 
+/* Optimized animation classes */
 .animate-fade-in {
   animation: fade-in 0.5s ease-out forwards;
+  will-change: transform, opacity;
 }
 
 .animate-scale-in {
   animation: scale-in 0.4s ease-out forwards;
+  will-change: transform, opacity;
 }
 
 .animate-slide-in-right {
   animation: slide-in-right 0.5s ease-out forwards;
+  will-change: transform, opacity;
 }
 
 .animate-bounce-in {
   animation: bounce-in 0.6s ease-out forwards;
+  will-change: transform, opacity;
 }
 
 .animate-gradient {
   background-size: 400% 400%;
   animation: gradient-shift 4s ease infinite;
+  will-change: background-position;
 }
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-shimmer {
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
   background-size: 200% 100%;
   animation: shimmer 2.5s infinite;
+  will-change: background-position;
 }
 
 .animate-pulse-glow {
   animation: pulse-glow 3s ease-in-out infinite;
+  will-change: box-shadow;
 }
 
-/* Enhanced Hover Effects - Touch Optimized */
+/* Performance-optimized hover effects */
 .hover-lift {
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }
 
 .hover-lift:hover {
-  transform: translateY(-4px);
+  transform: translate3d(0, -4px, 0);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 }
 
 @media (hover: none) and (pointer: coarse) {
   .hover-lift:active {
-    transform: translateY(-2px);
+    transform: translate3d(0, -2px, 0);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
   }
 }
 
 .hover-glow {
-  transition: all 0.25s ease;
+  transition: box-shadow 0.25s ease;
+  will-change: box-shadow;
 }
 
 .hover-glow:hover {
@@ -252,15 +269,16 @@
 
 .hover-scale {
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }
 
 .hover-scale:hover {
-  transform: scale(1.03);
+  transform: scale3d(1.03, 1.03, 1);
 }
 
 @media (hover: none) and (pointer: coarse) {
   .hover-scale:active {
-    transform: scale(1.02);
+    transform: scale3d(1.02, 1.02, 1);
   }
 }
 
@@ -296,7 +314,7 @@
 
 /* Modern Button Styles */
 .btn-modern {
-  @apply relative overflow-hidden px-6 py-3 rounded-xl font-semibold shadow-md transition-all duration-300 transform;
+  @apply relative overflow-hidden px-6 py-3 rounded-xl font-semibold shadow-md transition-all duration-300;
   will-change: transform;
 }
 
@@ -332,12 +350,12 @@
 }
 
 .card-modern:hover {
-  transform: translateY(-3px) scale(1.01);
+  transform: translate3d(0, -3px, 0) scale(1.01);
 }
 
 @media (hover: none) and (pointer: coarse) {
   .card-modern:active {
-    transform: translateY(-1px) scale(1.005);
+    transform: translate3d(0, -1px, 0) scale(1.005);
   }
 }
 
@@ -384,4 +402,15 @@
     min-height: 44px;
     min-width: 44px;
   }
+}
+
+/* Performance optimization for large elements */
+.large-element {
+  contain: layout style paint;
+}
+
+/* Lazy loading optimization */
+.lazy-load {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 200px;
 }
