@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -92,7 +91,7 @@ Student Details:
 Please guide me through the admission process.`;
 
       // Primary WhatsApp number (hidden from UI)
-      const whatsappUrl = `https://wa.me/919088770040?text=${encodeURIComponent(message)}`;
+      const whatsappUrl = `https://wa.me/919163924237?text=${encodeURIComponent(message)}`;
       
       // Show success toast
       toast({
