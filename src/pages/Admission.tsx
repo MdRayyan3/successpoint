@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -126,7 +127,7 @@ Please guide me through the admission process.`;
               Admission Information
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Join Success Point Coaching Centre for Academic Excellence and transform your future with quality education
+              Join Success Point Coaching Centre for quality education
             </p>
             <div className="mt-8 w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
           </div>
@@ -244,21 +245,6 @@ Please guide me through the admission process.`;
                 <h4 className="font-bold text-gray-800 text-lg mb-2">Recorded Classes</h4>
                 <p className="text-sm text-gray-600">Self-paced learning flexibility</p>
               </div>
-            </div>
-          </div>
-
-          {/* Contact Info - Only show secondary number */}
-          <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white p-8 rounded-3xl mb-12 text-center shadow-2xl animate-fade-in">
-            <h3 className="text-2xl font-bold mb-6 flex items-center justify-center">
-              📞 Contact for Admission
-            </h3>
-            <div className="flex flex-wrap justify-center gap-4 text-lg">
-              <a 
-                href="https://wa.me/919163924237" 
-                className="bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-300 font-semibold px-6 py-3 rounded-full hover:scale-105 transform"
-              >
-                📱 WhatsApp: +91 91639 24237
-              </a>
             </div>
           </div>
 
