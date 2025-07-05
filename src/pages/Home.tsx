@@ -1,4 +1,3 @@
-
 import { Phone, Mail, MapPin, GraduationCap, BookOpen, Award } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -156,58 +155,6 @@ const Home = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Location Section */}
-      <section className="py-16 bg-gradient-to-br from-white via-emerald-50 to-teal-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4">
-              Visit Our Location
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full"></div>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <Card className="card-modern animate-scale-in">
-              <CardContent className="p-0">
-                <div className="p-6 text-center">
-                  <div className="flex items-center justify-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center mr-4 shadow-lg animate-pulse-glow">
-                      <MapPin className="text-white" size={24} />
-                    </div>
-                    <span className="text-xl font-semibold text-gray-800">Rajabazar (Near Danish Restaurant)</span>
-                  </div>
-                </div>
-                
-                <div className="w-full h-64 relative overflow-hidden">
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.8!2d88.3639!3d22.5726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277aa8e9f9f99%3A0x8e9d1c2e6f3a4b5c!2sRajabazar%2C%20Kolkata%2C%20West%20Bengal%2C%20India!5e0!3m2!1sen!2sin!4v1640000000000!5m2!1sen!2sin"
-                    width="100%" 
-                    height="100%" 
-                    style={{ border: 0 }} 
-                    allowFullScreen 
-                    loading="lazy"
-                    title="Success Point Location"
-                    className="hover:grayscale-0 grayscale transition-all duration-500"
-                  ></iframe>
-                </div>
-                
-                <div className="p-6 text-center">
-                  <a 
-                    href="https://maps.app.goo.gl/eepnR5hKncrbXDkz5?g_st=a" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="btn-modern bg-gradient-to-r from-emerald-600 to-teal-600 text-white hover:from-emerald-700 hover:to-teal-700 inline-flex items-center"
-                  >
-                    <MapPin size={20} className="mr-3" />
-                    Get Directions
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
