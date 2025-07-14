@@ -25,7 +25,7 @@ const Header = () => {
             <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-300 shadow-lg">
               <span className="text-white font-bold text-sm">SP</span>
             </div>
-            <div className="text-xl font-bold bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
+            <div className="text-xl font-bold bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent font-cooper">
               SUCCESS POINT
             </div>
           </Link>
