@@ -74,7 +74,7 @@ const Footer = () => {
         <div className="border-t border-gray-700/50 mt-6 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
             <p className="text-gray-400 text-center md:text-left text-sm">
-              © 2024 Success Point Coaching Centre. All rights reserved.
+              © 2025 Success Point Coaching Centre. All rights reserved.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform text-sm">
