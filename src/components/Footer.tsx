@@ -15,7 +15,7 @@ const Footer = () => {
               <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-fuchsia-600 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-300 shadow-lg">
                 <span className="text-white font-bold text-sm">SP</span>
               </div>
-              <h3 className="text-xl font-bold text-transparent bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text">
+              <h3 className="text-xl font-bold text-transparent bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text font-cooper">
                 SUCCESS POINT
               </h3>
             </div>

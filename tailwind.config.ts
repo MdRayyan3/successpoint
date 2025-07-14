@@ -20,6 +20,7 @@ export default {
 		extend: {
 			fontFamily: {
 				'inter': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+				'cooper': ['Cooper Black', 'Impact', 'Arial Black', 'bold', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

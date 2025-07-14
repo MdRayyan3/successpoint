@@ -80,6 +80,11 @@
     font-display: swap; /* Performance optimization */
   }
 
+  /* Apply Cooper Black font to all heading elements and "Success Point" */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cooper Black', 'Impact', 'Arial Black', bold, sans-serif;
+  }
+
   /* Performance optimization for images */
   img {
     content-visibility: auto;
