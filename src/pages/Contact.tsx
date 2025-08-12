@@ -1,5 +1,5 @@
 
-import { Phone, Mail, MapPin, Clock, Users, GraduationCap } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Users, GraduationCap, MessageCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
@@ -50,7 +50,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="flex-1 text-center lg:text-left">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Md. Khurshid Alam Sir</h3>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Md. Khurshid Alam</h3>
                   <p className="text-violet-600 font-semibold mb-4">Head Teacher & Director</p>
                   <p className="text-gray-600 mb-6 leading-relaxed">
                     Leading Success Point with excellence and dedication. 
@@ -62,7 +62,7 @@ const Contact = () => {
                       Call: 9163924237
                     </Button>
                     <Button className="btn-modern bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:from-emerald-600 hover:to-teal-700">
-                      <Phone size={16} className="mr-2" />
+                      <MessageCircle size={16} className="mr-2" />
                       WhatsApp
                     </Button>
                   </div>
@@ -113,7 +113,7 @@ const Contact = () => {
                   rayyanmd130@gmail.com
                 </a>
                 <a href="https://wa.me/919163924237" className="text-lg text-gray-700 hover:text-emerald-600 transition-colors duration-300 block font-semibold hover-scale flex items-center justify-center">
-                  <Phone size={16} className="mr-2" />
+                  <MessageCircle size={16} className="mr-2" />
                   WhatsApp Chat
                 </a>
               </div>
