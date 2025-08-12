@@ -77,7 +77,11 @@
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: none;
-    font-display: swap; /* Performance optimization */
+    font-display: swap;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   /* Apply Cooper Black font to all heading elements and "Success Point" */
@@ -89,6 +93,9 @@
   img {
     content-visibility: auto;
     contain-intrinsic-size: 200px 200px;
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 }
 
@@ -418,4 +425,29 @@
 .lazy-load {
   content-visibility: auto;
   contain-intrinsic-size: 0 200px;
+}
+
+/* Theme transition optimization */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode optimizations */
+.dark {
+  color-scheme: dark;
+}
+
+/* Reduce motion for accessibility and performance */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-scale-in,
+  .animate-slide-in-right,
+  .animate-bounce-in,
+  .animate-gradient,
+  .animate-float,
+  .animate-shimmer,
+  .animate-pulse-glow {
+    animation: none !important;
+    transition: none !important;
+  }
 }

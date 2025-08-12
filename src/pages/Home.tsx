@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, GraduationCap, BookOpen, Award } from 'lucide-react';
+import { Phone, GraduationCap, BookOpen, Award, MessageCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const Home = () => {
@@ -29,7 +29,7 @@ const Home = () => {
   return (
     <div className="min-h-screen overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen bg-gradient-to-br from-violet-50 via-cyan-50 to-emerald-50 flex items-center">
+      <section className="relative min-h-screen bg-gradient-to-br from-violet-50 via-cyan-50 to-emerald-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 flex items-center">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-10 left-10 w-20 h-20 bg-gradient-to-r from-violet-400 to-purple-400 rounded-full opacity-20 animate-float"></div>
@@ -46,7 +46,7 @@ const Home = () => {
                   SUCCESS POINT
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed animate-slide-in-right" style={{ animationDelay: '0.3s' }}>
+              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed animate-slide-in-right" style={{ animationDelay: '0.3s' }}>
                 A Comprehensive Coaching Classes dedicated to providing quality education and shaping bright futures for students in Class 11th, 12th, and B.Com programs.
               </p>
             </div>
@@ -71,7 +71,7 @@ const Home = () => {
       </section>
 
       {/* Head Teacher Section */}
-      <section className="py-16 bg-gradient-to-br from-white via-cyan-50 to-violet-50 relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-br from-white via-cyan-50 to-violet-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-violet-50 to-transparent opacity-50"></div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -92,19 +92,22 @@ const Home = () => {
                       <div className="relative w-56 h-56 mx-auto rounded-3xl overflow-hidden shadow-2xl">
                         <img 
                           src="/lovable-uploads/e23f35c3-881c-4a15-ad66-590640806b5a.png" 
-                          alt="Md. Khurshid Alam Sir" 
+                          alt="Md. Khurshid Alam - Head Teacher at Success Point Coaching Centre" 
                           className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                          loading="eager"
+                          width="224"
+                          height="224"
                         />
                       </div>
                     </div>
                   </div>
                   
                   <div className="lg:w-2/3 p-6 lg:p-8">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                      Md. Khurshid Alam Sir
+                    <h3 className="text-2xl font-bold text-gray-800 mb-4 dark:text-gray-100">
+                      Md. Khurshid Alam
                     </h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed">
-                      Our experienced and dedicated head teacher, committed to providing the best education and guidance to all our students. With years of experience in comprehensive coaching, Md. Khurshid Alam Sir ensures that every student receives personalized attention and quality education.
+                    <p className="text-gray-600 mb-6 leading-relaxed dark:text-gray-300">
+                      Our experienced and dedicated head teacher, committed to providing the best education and guidance to all our students. With years of experience in comprehensive coaching, Md. Khurshid Alam ensures that every student receives personalized attention and quality education.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4">
                       <a href="tel:9163924237" className="btn-modern bg-gradient-to-r from-cyan-600 to-blue-700 text-white hover:from-cyan-700 hover:to-blue-800">
@@ -112,7 +115,7 @@ const Home = () => {
                         Call Now
                       </a>
                       <a href="https://wa.me/919163924237" className="btn-modern bg-gradient-to-r from-emerald-600 to-teal-700 text-white hover:from-emerald-700 hover:to-teal-800">
-                        <Phone size={16} className="mr-2" />
+                        <MessageCircle size={16} className="mr-2" />
                         WhatsApp
                       </a>
                     </div>
@@ -125,7 +128,7 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 relative">
+      <section className="py-16 bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent mb-4">
@@ -146,10 +149,10 @@ const Home = () => {
                   <div className={`w-16 h-16 bg-gradient-to-r ${feature.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-300 group-hover:rotate-3 animate-pulse-glow`}>
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-gray-900">
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4 group-hover:text-gray-900 dark:group-hover:text-gray-100">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700">
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-300">
                     {feature.description}
                   </p>
                 </CardContent>

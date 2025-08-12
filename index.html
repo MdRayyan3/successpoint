@@ -46,6 +46,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cooper+Black&display=swap">
     <link rel="dns-prefetch" href="https://platform.linkedin.com">
+    <link rel="prefetch" href="/lovable-uploads/e23f35c3-881c-4a15-ad66-590640806b5a.png">
+    
+    <!-- Critical CSS for instant rendering -->
+    <style>
+      body { 
+        font-family: system-ui, sans-serif; 
+        font-display: swap;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+      .loading { opacity: 0; }
+      /* Critical above-the-fold styles */
+      .hero-section { 
+        min-height: 100vh; 
+        background: linear-gradient(135deg, #f5f3ff, #ecfeff, #ecfdf5);
+      }
+      @media (prefers-color-scheme: dark) {
+        .hero-section {
+          background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+        }
+      }
+    </style>
     
     <!-- Theme Color -->
     <meta name="theme-color" content="#8b5cf6" />
@@ -62,13 +84,20 @@
       "logo": "/lovable-uploads/a64f3beb-5901-47f6-afb3-bca76bbc027f.png",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Kolkata",
+        "addressLocality": "Kolkata", 
         "addressRegion": "West Bengal",
         "addressCountry": "IN"
       },
       "sameAs": [
         "https://www.linkedin.com/in/-%7Emdrayyan5363"
-      ]
+      ],
+      "employee": {
+        "@type": "Person",
+        "name": "Md. Khurshid Alam",
+        "jobTitle": "Head Teacher",
+        "image": "/lovable-uploads/e23f35c3-881c-4a15-ad66-590640806b5a.png",
+        "telephone": "+919163924237"
+      }
     }
     </script>
   </head>
