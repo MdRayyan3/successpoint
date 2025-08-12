@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => ({
   build: {
     // Performance optimizations
     target: 'esnext',
-    minify: 'terser',
+    minify: 'esbuild', // Use esbuild (default, faster than terser)
     cssMinify: true,
     reportCompressedSize: false,
     rollupOptions: {
