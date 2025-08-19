@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Sparkles, Star } from 'lucide-react';
-import { useTheme } from '@/components/ThemeProvider';
 
 const LinkedInBadge = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [scriptLoaded, setScriptLoaded] = useState(false);
-  const { theme } = useTheme();
 
   useEffect(() => {
     const loadLinkedInScript = () => {
@@ -116,7 +114,7 @@ const LinkedInBadge = () => {
                       className="badge-base LI-profile-badge" 
                       data-locale="en_US" 
                       data-size="medium" 
-                      data-theme={theme === 'dark' ? 'dark' : 'light'} 
+                      data-theme="light" 
                       data-type="VERTICAL" 
                       data-vanity="mdrayyan3" 
                       data-version="v1"

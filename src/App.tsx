@@ -4,7 +4,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -43,16 +42,14 @@ const AppContent = () => {
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider defaultTheme="light" storageKey="success-point-theme">
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <AppContent />
-        </BrowserRouter>
-      </TooltipProvider>
-    </ThemeProvider>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <ScrollToTop />
+        <AppContent />
+      </BrowserRouter>
+    </TooltipProvider>
   </QueryClientProvider>
 );
 
