@@ -12,7 +12,6 @@ interface FormData {
   fullName: string;
   admissionClass: string;  
   mobile: string;
-  password: string;
   email: string;
 }
 
@@ -20,7 +19,6 @@ interface FormErrors {
   fullName?: string;
   admissionClass?: string;
   mobile?: string;
-  password?: string;
   email?: string;
 }
 
@@ -29,7 +27,6 @@ const Admission = () => {
     fullName: '',
     admissionClass: '',
     mobile: '',
-    password: '',
     email: ''
   });
 
@@ -41,7 +38,6 @@ const Admission = () => {
     if (!formData.fullName.trim()) newErrors.fullName = 'Full name is required';
     if (!formData.admissionClass) newErrors.admissionClass = 'Please select a class';
     if (!formData.mobile.trim()) newErrors.mobile = 'Mobile number is required';
-    if (!formData.password.trim()) newErrors.password = 'Password is required';
     if (!formData.email.trim()) newErrors.email = 'Email is required';
     
     setErrors(newErrors);
@@ -314,18 +310,6 @@ Please guide me through the admission process.`;
                   {errors.mobile && <p className="text-red-500 text-sm mt-1">{errors.mobile}</p>}
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="password" className="text-gray-700 font-medium">Create Password *</Label>
-                  <Input
-                    id="password"
-                    type="password"
-                    value={formData.password}
-                    onChange={(e) => handleInputChange('password', e.target.value)}
-                    className={`${errors.password ? 'border-red-500' : 'border-gray-300'} rounded-xl focus:ring-2 focus:ring-blue-500 transition-all duration-300`}
-                    placeholder="Create a secure password"
-                  />
-                  {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
-                </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-gray-700 font-medium">Email *</Label>

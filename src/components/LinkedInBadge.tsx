@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Sparkles, Star } from 'lucide-react';
+import { useTheme } from '@/components/ThemeProvider';
 
 const LinkedInBadge = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [scriptLoaded, setScriptLoaded] = useState(false);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const loadLinkedInScript = () => {
@@ -114,14 +116,14 @@ const LinkedInBadge = () => {
                       className="badge-base LI-profile-badge" 
                       data-locale="en_US" 
                       data-size="medium" 
-                      data-theme="light" 
+                      data-theme={theme === 'dark' ? 'dark' : 'light'} 
                       data-type="VERTICAL" 
-                      data-vanity="-~mdrayyan5363" 
+                      data-vanity="mdrayyan3" 
                       data-version="v1"
                     >
                       <a 
                         className="badge-base__link LI-simple-link" 
-                        href="https://in.linkedin.com/in/-%7Emdrayyan5363?trk=profile-badge"
+                        href="https://in.linkedin.com/in/mdrayyan3?trk=profile-badge"
                         rel="noopener noreferrer"
                         target="_blank"
                         aria-label="View Md Rayyan's LinkedIn profile"
@@ -139,7 +141,7 @@ const LinkedInBadge = () => {
                   {!isVisible && (
                     <div className="w-64 h-32 bg-gradient-to-r from-muted/10 to-accent/10 rounded-lg flex items-center justify-center border border-border">
                       <a 
-                        href="https://in.linkedin.com/in/-%7Emdrayyan5363?trk=profile-badge"
+                        href="https://in.linkedin.com/in/mdrayyan3?trk=profile-badge"
                         rel="noopener noreferrer"
                         target="_blank"
                         className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-200 font-medium"
