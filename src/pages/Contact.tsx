@@ -2,8 +2,20 @@
 import { Phone, Mail, MapPin, Clock, Users, GraduationCap, MessageCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { useEffect } from 'react';
 
 const Contact = () => {
+  useEffect(() => {
+    // Load LinkedIn badge script
+    if (!document.querySelector('script[src*="linkedin.com/badge"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://platform.linkedin.com/badges/js/profile.js';
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 via-cyan-50 to-emerald-50">
       {/* Hero Section */}
@@ -199,6 +211,40 @@ const Contact = () => {
                   Meet Our Faculty
                 </Button>
               </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Website Creator Section */}
+        <div className="text-center mb-12">
+          <Card className="card-modern bg-gradient-to-br from-blue-50 to-indigo-50">
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Website Creator</h3>
+              <p className="text-gray-600 mb-6">Meet the talented developer who brought this vision to life with cutting-edge technology and creative design</p>
+              
+              {/* LinkedIn Badge */}
+              <div className="flex justify-center mb-4">
+                <div 
+                  className="badge-base LI-profile-badge" 
+                  data-locale="en_US" 
+                  data-size="medium" 
+                  data-theme="dark" 
+                  data-type="VERTICAL" 
+                  data-vanity="mdrayyan3" 
+                  data-version="v1"
+                >
+                  <a 
+                    className="badge-base__link LI-simple-link" 
+                    href="https://in.linkedin.com/in/mdrayyan3?trk=profile-badge"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Md Rayyan
+                  </a>
+                </div>
+              </div>
+              
+              <p className="text-sm text-gray-500">Author & Creator of this Website</p>
             </CardContent>
           </Card>
         </div>

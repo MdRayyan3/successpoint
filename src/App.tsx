@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import LinkedInBadge from "./components/LinkedInBadge";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import OurFaculty from "./pages/OurFaculty";
@@ -18,9 +18,6 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const AppContent = () => {
-  const location = useLocation();
-  const isHomePage = location.pathname === '/';
-
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -34,7 +31,6 @@ const AppContent = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      {isHomePage && <LinkedInBadge />}
       <Footer />
     </div>
   );
