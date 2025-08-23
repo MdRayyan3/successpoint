@@ -10,7 +10,9 @@ import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Courses from "./pages/Courses";
 import OurFaculty from "./pages/OurFaculty";
+import Testimonials from "./pages/Testimonials";
 import Admission from "./pages/Admission";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -25,7 +27,9 @@ const AppContent = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/courses" element={<Courses />} />
           <Route path="/faculty" element={<OurFaculty />} />
+          <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/admission" element={<Admission />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
