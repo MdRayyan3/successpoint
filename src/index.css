@@ -2,69 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Modern Education Design System */
+/* Design System - Light Mode Only */
 :root {
-  /* Base Colors */
   --background: 0 0% 100%;
-  --foreground: 222 47% 11%;
+  --foreground: 222.2 84% 4.9%;
   --card: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
+  --card-foreground: 222.2 84% 4.9%;
   --popover: 0 0% 100%;
-  --popover-foreground: 222 47% 11%;
-  
-  /* Primary Brand - Professional Blue */
-  --primary: 217 91% 60%;
-  --primary-foreground: 0 0% 100%;
-  --primary-hover: 217 91% 50%;
-  --primary-light: 217 78% 95%;
-  
-  /* Secondary Brand - Energetic Orange */
-  --secondary: 25 95% 53%;
-  --secondary-foreground: 0 0% 100%;
-  --secondary-hover: 25 95% 43%;
-  --secondary-light: 25 100% 97%;
-  
-  /* Neutral Palette */
-  --muted: 210 40% 98%;
-  --muted-foreground: 215 20% 65%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 221.2 83.2% 53.3%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
   --accent: 210 40% 96%;
-  --accent-foreground: 222 47% 11%;
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 217 91% 60%;
-  
-  /* Success & Trust Colors */
-  --success: 142 71% 45%;
-  --success-foreground: 0 0% 100%;
-  --success-light: 142 76% 96%;
-  
-  /* Semantic Colors */
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 100%;
-  --warning: 38 92% 50%;
-  --warning-foreground: 0 0% 100%;
-  
-  /* Chart Colors */
-  --chart-1: 217 91% 60%;
-  --chart-2: 25 95% 53%;
-  --chart-3: 142 71% 45%;
-  --chart-4: 271 91% 65%;
-  --chart-5: 347 77% 50%;
-  
-  /* Modern Radius */
+  --accent-foreground: 222.2 84% 4.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 221.2 83.2% 53.3%;
+  --chart-1: 12 76% 61%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 197 37% 24%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
   --radius: 0.75rem;
-  
-  /* Custom Gradients */
-  --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
-  --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-hover)));
-  --gradient-hero: linear-gradient(135deg, hsl(var(--primary-light)), hsl(var(--secondary-light)));
-  --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(142 71% 35%));
-  
-  /* Modern Shadows */
-  --shadow-sm: 0 1px 2px 0 hsl(var(--primary) / 0.05);
-  --shadow-md: 0 4px 6px -1px hsl(var(--primary) / 0.1), 0 2px 4px -1px hsl(var(--primary) / 0.06);
-  --shadow-lg: 0 10px 15px -3px hsl(var(--primary) / 0.1), 0 4px 6px -2px hsl(var(--primary) / 0.05);
-  --shadow-xl: 0 20px 25px -5px hsl(var(--primary) / 0.1), 0 10px 10px -5px hsl(var(--primary) / 0.04);
 }
 
 /* Base Element Styling */

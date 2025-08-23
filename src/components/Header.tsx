@@ -9,65 +9,58 @@ const Header = () => {
 
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Courses', path: '/courses' },
-    { name: 'Faculty', path: '/faculty' },
-    { name: 'Testimonials', path: '/testimonials' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Our Faculty', path: '/faculty' },
+    { name: 'Admission', path: '/admission' },
+    { name: 'Contact Us', path: '/contact' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-background/95 backdrop-blur-sm shadow-md sticky top-0 z-50 border-b border-border">
+    <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary-hover rounded-xl flex items-center justify-center shadow-lg">
-              <span className="text-primary-foreground font-display font-bold text-lg">SP</span>
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center shadow-sm">
+              <span className="text-white font-bold text-sm">SP</span>
             </div>
-            <div className="text-xl font-display font-bold text-foreground">
+            <div className="text-xl font-bold text-gray-800">
               SUCCESS POINT
             </div>
           </Link>
           
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1">
+          <nav className="hidden md:flex space-x-1">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
                   isActive(item.path)
-                    ? 'text-primary bg-primary-light'
-                    : 'text-muted-foreground hover:text-primary hover:bg-accent'
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                 }`}
               >
                 {item.name}
               </Link>
             ))}
-            <Link 
-              to="/admission" 
-              className="ml-4 bg-secondary hover:bg-secondary-hover text-secondary-foreground px-6 py-2 rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg"
-            >
-              Enroll Now
-            </Link>
           </nav>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden">
+          <div className="md:hidden">
             <button
-              className="p-2 rounded-lg hover:bg-accent transition-colors duration-200"
+              className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X size={24} className="text-foreground" /> : <Menu size={24} className="text-foreground" />}
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`lg:hidden overflow-hidden transition-all duration-300 ${
-          isMenuOpen ? 'max-h-96 pb-4' : 'max-h-0'
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ${
+          isMenuOpen ? 'max-h-80 pb-4' : 'max-h-0'
         }`}>
           <div className="space-y-2 pt-4">
             {navItems.map((item) => (
@@ -76,21 +69,14 @@ const Header = () => {
                 to={item.path}
                 className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200 ${
                   isActive(item.path)
-                    ? 'text-primary bg-primary-light'
-                    : 'text-muted-foreground hover:text-primary hover:bg-accent'
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
-            <Link 
-              to="/admission" 
-              className="block mt-4 bg-secondary hover:bg-secondary-hover text-secondary-foreground px-4 py-3 rounded-lg font-medium text-center transition-all duration-200"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Enroll Now
-            </Link>
           </div>
         </div>
       </div>
