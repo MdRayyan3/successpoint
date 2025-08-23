@@ -239,7 +239,6 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Md Rayyan
                   </a>
                 </div>
               </div>
